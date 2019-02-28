@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "deploy": "master -d dist"
+    "deploy": "dist"
   },
   "repository": {
     "type": "git",

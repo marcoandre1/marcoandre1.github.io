@@ -1,1 +1,0 @@
-Trying gh-pages with personal github page.

@@ -1,7 +1,6 @@
 {
   "name": "marcoandre1.github.io",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "deploy": "gh-pages -d dist"
@@ -17,7 +16,5 @@
     "url": "https://github.com/marcoandre1/marcoandre1.github.io/issues"
   },
   "homepage": "https://github.com/marcoandre1/marcoandre1.github.io",
-  "dependencies": {
-    "gh-pages": "^2.0.1"
-  }
+  "description": ""
 }

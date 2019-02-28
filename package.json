@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/marcoandre1/marcoandre1.github.io/issues"
   },
-  "homepage": "https://marcoandre1.github.io"
+  "homepage": "https://marcoandre1.github.io",
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
 }

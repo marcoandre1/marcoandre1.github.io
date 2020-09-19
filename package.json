@@ -8,10 +8,10 @@
     "react-dom": "^16.13.1",
     "react-scripts": "^3.4.3"
   },
-  "homepage": "https://marcoandre1.github.io",
+  "homepage": "https://modokemdev.com",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

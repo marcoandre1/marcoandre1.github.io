@@ -15,7 +15,7 @@ class App extends Component {
             This personal website is under construction.
           </p>
           <p>
-            2020 update!
+            2020 update! (One more time!)
           </p>
         </header>
       </div>

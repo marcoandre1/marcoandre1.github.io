@@ -545,9 +545,15 @@ video {
   height: auto;
 }
 
-/* Write your own custom base styles here */
+h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
 
-/* Start purging... */
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
 
 .container {
   width: 100%;
@@ -583,11 +589,26 @@ video {
   }
 }
 
-/* Stop purging. */
+.btn-blue {
+  --tw-bg-opacity: 1;
+  background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
+}
 
-/* Write your own custom component styles here */
+.btn-blue:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(29, 78, 216, var(--tw-bg-opacity));
+}
 
-/* Start purging... */
+.btn-blue {
+  border-radius: 0.25rem;
+  font-weight: 700;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
 
 .space-y-0 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
@@ -31292,9 +31313,35 @@ video {
   animation: bounce 1s infinite;
 }
 
-/* Stop purging. */
+.filter-none {
+  -webkit-filter: none;
+          filter: none;
+}
 
-/* Your own custom utilities */
+.filter-grayscale {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.hover\:filter-none:hover {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.hover\:filter-grayscale:hover {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.focus\:filter-none:focus {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.focus\:filter-grayscale:focus {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
 
 @media (min-width: 640px) {
   .sm\:container {

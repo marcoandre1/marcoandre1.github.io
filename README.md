@@ -1,12 +1,12 @@
 # Notice
 
-This website is ready for deployment using `gh-pages` in `marcoandre1.github.io` repository. Copy/paste folder content to personal website folder. Then push it to the repository, deleting all present files and run:
+This web application is ready for deployment using `gh-pages`.
 
 ```console
 npm run deploy
 ```
 
-**You will probably need to update the domain name as gh-pages is not optimized for user page.**
+**You will need to update the domain name as gh-pages is not optimized for user page.**
 
 > In other words, add the `CNAME` file after deployment!
 

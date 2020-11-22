@@ -4,10 +4,13 @@
   "private": true,
   "dependencies": {
     "gh-pages": "^2.2.0",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^6.7.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.3",
-    "redux": "^4.0.5"
+    "react-scripts": "^4.0.0",
+    "redux": "^4.0.5",
+    "tailwindcss": "^2.0.1"
   },
   "homepage": "https://modokemdev.com",
   "scripts": {
@@ -16,7 +19,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:styles": "postcss src/styles/global.css -o src/styles.css",
+    "prebuild": "npm run build:styles",
+    "prestart": "npm run build:styles"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -26,5 +32,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "postcss-cli": "^8.3.0"
+  }
 }

@@ -8,8 +8,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Hello! My name is Marco André Echeverria.
+          <p className="text-red-500">
+            Hello! My name is Marco E (aka modokem, modokemdev, meltinglight).
           </p>
           <p>
             This personal website is under construction.
@@ -18,6 +18,9 @@ class App extends Component {
             2020 update! (One more time!)
           </p>
         </header>
+        <div className="px-6 py-4 component-sub-highlight ">
+          <button className="btn-blue">Subscribe</button>
+        </div>
       </div>
     );
   }

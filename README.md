@@ -1,12 +1,12 @@
 # Modokemdev
 
-<modokemdev.com> is my personal landing page. As of November 2020, the website is built with Create React App and Tailwind CSS.
+<https://modokemdev.com/> is my personal landing page. As of November 2020, the website is built with Create React App and Tailwind CSS.
 
 ## Index
 
-[Deployment to GitHub pages]()  
-[Adding Tailwind CSS to Create React App]()  
-[React auto generated README]()  
+[Deployment to GitHub pages](https://github.com/marcoandre1/marcoandre1.github.io#deployment-to-github-pages)  
+[Adding Tailwind CSS to Create React App](https://github.com/marcoandre1/marcoandre1.github.io#adding-tailwind-css-to-create-react-app)  
+[React auto generated README](https://github.com/marcoandre1/marcoandre1.github.io#react-auto-generated-readme)  
 
 ## Deployment to GitHub pages
 
@@ -16,9 +16,15 @@ This web application is ready for deployment using `gh-pages`. Simply run the fo
 npm run deploy
 ```
 
-**You will need to update the domain name as gh-pages is not optimized for user page.**
+For this to work, you previously need to install `gh-pages` npm package and update the `package.json` scripts:
 
-> In other words, add the `CNAME` file after deployment!
+```json
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
+  "build": "react-scripts build && echo modokemdev.com > ./build/CNAME",
+}
+```
 
 ## Adding Tailwind CSS to Create React App
 

@@ -18,7 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:styles": "postcss src/styles/global.css -o src/styles.css",
+    "build:styles": "postcss src/styles/global.css -o src/global.css",
     "prebuild": "npm run build:styles",
     "prestart": "npm run build:styles"
   },

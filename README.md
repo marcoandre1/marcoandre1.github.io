@@ -10,6 +10,8 @@
 
 ## Deployment to GitHub pages
 
+> **Before deploying** to GitHub pages, ensure your branch is up to date and run `npm run start` to make sure everything works as expected!
+
 This web application is ready for deployment using `gh-pages`. Simply run the following command in `git bash`:
 
 ```console

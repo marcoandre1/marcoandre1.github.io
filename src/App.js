@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import profile from "./images/profile.png";
-import "./App.css";
+import { Provider } from "react-redux";
 import { store } from "./store";
-
-console.log(store.getState());
+import { ConnectedDashboard } from "./components/Dashboard";
+import { BrowserRouter, Route } from "react-router-dom";
+import { ConnectedNavigation } from "./components/Navigation";
+import logo from "./logo.svg";
+import "./App.css";
 
 class App extends Component {
   render() {
@@ -18,31 +19,18 @@ class App extends Component {
           <p>This personal website is under construction.</p>
           <p>2020 update! (One more time!)</p>
         </header>
-        <div className="flex justify-center">
-          <div className="component-highlight max-w-sm rounded overflow-hidden shadow-lg items-center">
-            <img className="w-full" src={profile} alt="Profile" />
-            <div className="px-6 py-4">
-              <div className="font-bold text-xl mb-2">Marco E</div>
-              <p className="text-gray-700 text-base">
-                C# developer at day, Dragon Rider at night.
-              </p>
+        <BrowserRouter>
+          <Provider store={store}>
+            <div className="flex">
+              <ConnectedNavigation />
+              <Route
+                exact
+                path={`/dashboard`}
+                render={() => <ConnectedDashboard />}
+              />
             </div>
-            <div className="px-6 pt-4 pb-2">
-              <span className="component-sub-highlight inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #photography
-              </span>
-              <span className="component-sub-highlight inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #travel
-              </span>
-              <span className="component-sub-highlight inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                #winter
-              </span>
-              <div className="px-6 py-4 component-sub-highlight ">
-                <button className="btn-blue">Subscribe</button>
-              </div>
-            </div>
-          </div>
-        </div>
+          </Provider>
+        </BrowserRouter>
       </div>
     );
   }

@@ -1,16 +1,9 @@
 {
-  "name": "react_personal_website",
-  "version": "0.1.0",
+  "name": "modokemdev-website",
+  "version": "1.0.0",
+  "description": "Modokemdev website created using create-react-app",
+  "main": "index.js",
   "private": true,
-  "dependencies": {
-    "gh-pages": "^2.2.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^4.0.0",
-    "redux": "^4.0.5",
-    "tailwindcss": "^2.0.1"
-  },
-  "homepage": "https://modokemdev.com",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
@@ -21,6 +14,43 @@
     "build:styles": "postcss src/styles/global.css -o src/global.css",
     "prebuild": "npm run build:styles",
     "prestart": "npm run build:styles"
+  },
+  "husky": {
+    "hooks": {
+    "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcoandre1/marcoandre1.github.io.git"
+  },
+  "keywords": [
+    "create-react-app",
+    "tailwind CSS",
+    "Github Pages",
+    "gh-pages"
+  ],
+  "author": "modokemdev (https://modokemdev.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcoandre1/marcoandre1.github.io/issues"
+  },
+  "homepage": "https://modokemdev.com",
+  "dependencies": {
+    "gh-pages": "^2.2.0",
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "4.0.1",
+    "redux": "^4.0.5",
+    "tailwindcss": "^2.0.1"
   },
   "eslintConfig": {
     "extends": "react-app"

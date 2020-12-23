@@ -8,17 +8,23 @@
 [Adding Tailwind CSS to Create React App](https://github.com/marcoandre1/marcoandre1.github.io#adding-tailwind-css-to-create-react-app)  
 [React auto generated README](https://github.com/marcoandre1/marcoandre1.github.io#react-auto-generated-readme)  
 
-## Deployment to GitHub pages
+## Deployment to GitHub Pages
 
-> **Before deploying** to GitHub pages, ensure your branch is up to date and run `npm run start` to make sure everything works as expected!
+> **Before deploying** to GitHub pages, ensure your branch is up to date and run `npm start` to make sure everything works as expected!  
 
-This web application is ready for deployment using `gh-pages`. Simply run the following command in `git bash`:
+Follow the official documentation for [deploying to GitHub Pages](https://create-react-app.dev/docs/deployment#github-pages) from **Create React App**:
 
-```console
-npm run deploy
-```
+1. [Step 1: `Add homepage` to `package.json`](https://create-react-app.dev/docs/deployment#step-1-add-homepage-to-packagejson)  
+2. [Step 2: Install `gh-pages` and add `deploy` to `scripts` in `package.json`](https://create-react-app.dev/docs/deployment#step-2-install-gh-pages-and-add-deploy-to-scripts-in-packagejson)  
+3. [Step 3: Deploy the site by running `npm run deploy`](https://create-react-app.dev/docs/deployment#step-3-deploy-the-site-by-running-npm-run-deploy)  
+4. [Step 4: For a project page, ensure your project’s settings use `gh-pages`](https://create-react-app.dev/docs/deployment#step-4-for-a-project-page-ensure-your-projects-settings-use-gh-pages)  
+5. [Step 5: Optionally, configure the domain](https://create-react-app.dev/docs/deployment#step-5-optionally-configure-the-domain)  
 
-For this to work, you previously need to install `gh-pages` npm package and update the `package.json` scripts:
+### Additional notes for deploying to GitHub Pages
+
+Make sure to run `npm run deploy` from `git bash` (just tap `git bash` on the console, it should already be installed if you have [git](https://git-scm.com/)). This is necessary because only [git bash](https://gitforwindows.org/) is going to prompt you for your password, if you have set your `ssh` key, which is necessary to deploy to GitHub Pages. If you want to learn more about `git bash` you can check [What is Git Bash for Windows anyway?](https://superuser.com/questions/1053633/what-is-git-bash-for-windows-anyway).  
+
+Also, if you don't want to add manually the `CNAME` file after deploying, you can add it on the build process. Update the `package.json` scripts as follows:  
 
 ```json
 "scripts": {

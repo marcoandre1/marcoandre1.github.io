@@ -40,7 +40,7 @@
   "bugs": {
     "url": "https://github.com/marcoandre1/marcoandre1.github.io/issues"
   },
-  "homepage": "https://github.com/marcoandre1/marcoandre1.github.io#readme",
+  "homepage": "https://modokemdev.com",
   "dependencies": {
     "gh-pages": "^2.2.0",
     "husky": "^4.3.6",

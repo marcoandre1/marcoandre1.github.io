@@ -11,17 +11,17 @@
     "build": "react-scripts build && echo modokemdev.com > ./build/CNAME",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:styles": "postcss src/styles/global.css -o src/global.css",
+    "build:styles": "postcss src/styles/index.css -o src/index.css",
     "prebuild": "npm run build:styles",
     "prestart": "npm run build:styles"
   },
   "husky": {
     "hooks": {
-    "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+    "src/**/*.{js,jsx,ts,tsx,json,md}": [
       "prettier --write"
     ]
   },
@@ -48,9 +48,11 @@
     "prettier": "^2.2.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-redux": "^7.2.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "redux": "^4.0.5",
-    "tailwindcss": "^2.0.1"
+    "tailwindcss": "^2.0.2"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -62,6 +64,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "postcss-cli": "^8.3.0"
+    "postcss-cli": "^8.3.1"
   }
 }

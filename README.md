@@ -6,6 +6,7 @@
 
 [Deployment to GitHub pages](https://github.com/marcoandre1/marcoandre1.github.io#deployment-to-github-pages)  
 [Adding Tailwind CSS to Create React App](https://github.com/marcoandre1/marcoandre1.github.io#adding-tailwind-css-to-create-react-app)  
+[Formatting Code Automatically](https://github.com/marcoandre1/marcoandre1.github.io#formatting-code-automatically)  
 [React auto generated README](https://github.com/marcoandre1/marcoandre1.github.io#react-auto-generated-readme)  
 
 ## Deployment to GitHub Pages
@@ -36,6 +37,8 @@ Also, if you don't want to add manually the `CNAME` file after deploying, you ca
 
 ## Adding Tailwind CSS to Create React App
 
+> **NOTE:** As of December 2020, there is an official guide to [Install Tailwind CSS with Create React App](https://tailwindcss.com/docs/guides/create-react-app). You can either follow the official documentation or the steps below.  
+
 The main reason why adding Tailwind CSS to **Create React App** is a problem is that **Create React App** manages the WebPack config for us. There are plenty of ways to add Tailwind CSS. You can add the [CRACO](https://www.npmjs.com/package/@craco/craco) npm package (see [dev.to article](https://dev.to/ryandunn/how-to-use-tailwind-with-create-react-app-and-postcss-with-no-hassle-2i09) and this [Create React App issue](https://github.com/facebook/create-react-app/issues/2133)). Another way of adding Tailwind CSS without CRACO is explained in this article : [create-react-app with tailwind via postcss plus purgecss](https://medium.com/@xijo/create-react-app-with-tailwind-via-postcss-plus-purgecss-5c36b4c33ba7), which is close to what I did.
 
 Personally, I followed this article : [Setup Tailwind with PostCSS in Create-React-App in 5 Minutes](https://medium.com/@grobeldev/setup-tailwind-with-postcss-in-create-react-app-in-5-minutes-43ae343e2789), and the [Tailwind official installation guide](https://tailwindcss.com/docs/installation).
@@ -62,7 +65,7 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  purge: ['./src/**/*.{js,ts,jsx,tsx}'],
+  purge: ['./src/**/*.{js,ts,jsx,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
@@ -78,7 +81,7 @@ module.exports = {
 }
 ```
 
-4. **Include Tailwind in your CSS**. Add a `src/styles/global.css` file and and use the `@tailwind` directive to inject Tailwind's `base`, `components`, and `utilities` styles:  
+4. **Include Tailwind in your CSS**. Add a `src/styles/index.css` file and and use the `@tailwind` directive to inject Tailwind's `base`, `components`, and `utilities` styles:  
 
 ```javascript
 @tailwind base;
@@ -90,7 +93,7 @@ module.exports = {
 
 ```json
 "scripts": {
-  "build:styles": "postcss src/styles/global.css -o src/global.css",
+  "build:styles": "postcss src/styles/index.css -o src/index.css",
   "prebuild": "npm run build:styles",
   "prestart": "npm run build:styles"
   }
@@ -98,13 +101,37 @@ module.exports = {
 
 > You don't need to install **postCSS** because it is [already installed](https://create-react-app.dev/docs/post-processing-css/).  
 
-For this to work, you will need to add an `import` directive in the `src/index.js` file:  
+For this to work, you will need to keep the `import` directive for `index.css` in the `src/index.js` file:  
 
 ```javascript
-import './global.css';
+import './index.css';
 ```
 
-Now, every time you run your project, as you would usually do, a `global.css` file will be generated in the `src` folder containing your tailwind CSS!
+Now, every time you run your project, as you would usually do, an `index.css` file will be generated in the `src` folder containing your tailwind CSS!
+
+## Formatting Code Automatically
+
+There is an official documentation on [Formatting Code Automatically](https://create-react-app.dev/docs/setting-up-your-editor#formatting-code-automatically). Here are the steps:  
+
+1. `npm install --save husky lint-staged prettier`  
+2. Update `package.json`:
+
+```json
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,md}": [
+      "prettier --write"
+    ]
+  }
+}
+```
+
+> **Note:** Because we are using **Tailwind CSS**, we recommend removing `css,scss` from `lint-staged`. This will improve the running time because prettier will not format those files.  
 
 ## React auto generated README
 

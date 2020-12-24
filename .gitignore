@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 .eslintcache
+
+# Don't import Tailwind CSS library to repository
+src/index.css

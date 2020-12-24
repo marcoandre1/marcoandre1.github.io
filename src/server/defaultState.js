@@ -73,18 +73,21 @@ export const defaultState = {
   ],
   languages: [
     {
-      name: "english",
-      id: "EN",
+      name: "English",
+      id: "en",
+      title: "Dashboard",
       description: "C# developer at day, Dragon Rider at night.",
     },
     {
-      name: "french",
-      id: "FR",
+      name: "Français",
+      id: "fr",
+      title: "Tableau de bord",
       description: "Développeur C# le jour, Dragon Rider la nuit.",
     },
     {
-      name: "spanish",
-      id: "ES",
+      name: "Español",
+      id: "es",
+      title: "Tablero",
       description: "Desarollador C# de día, Dragon Rider de noche.",
     },
   ],

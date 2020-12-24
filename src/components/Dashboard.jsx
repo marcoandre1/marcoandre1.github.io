@@ -2,18 +2,25 @@ import React from "react";
 import { connect } from "react-redux";
 import { ConnectedTaskList } from "./TaskList";
 
-export const Dashboard = ({ groups }) => (
+export const Dashboard = ({ language }) => (
   <div>
-    <h2>Dashboard</h2>
-    {groups.map((group) => (
-      <ConnectedTaskList key={group.id} id={group.id} name={group.name} />
-    ))}
+    <h2>{language.title}</h2>
+    <ConnectedTaskList
+      key={language.id}
+      id={language.id}
+      name={language.name}
+      description={language.description}
+    />
   </div>
 );
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
+  let id = ownProps.match.params.id;
+  let language = state.languages.find((language) => language.id === id);
+
   return {
-    groups: state.groups,
+    id,
+    language,
   };
 }
 

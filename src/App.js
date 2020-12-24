@@ -1,8 +1,8 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { ConnectedDashboard } from "./components/Dashboard";
-import { BrowserRouter, Route } from "react-router-dom";
 import { ConnectedNavigation } from "./components/Navigation";
 
 class App extends Component {
@@ -14,8 +14,8 @@ class App extends Component {
             <ConnectedNavigation />
             <Route
               exact
-              path={`/dashboard`}
-              render={() => <ConnectedDashboard />}
+              path={`/:id`}
+              render={({ match }) => <ConnectedDashboard match={match} />}
             />
           </div>
         </Provider>

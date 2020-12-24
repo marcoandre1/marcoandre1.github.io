@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Provider store={store}>
-          <div className="flex">
+          <div className="mx-4 my-3">
             <ConnectedNavigation />
             <Route
               exact

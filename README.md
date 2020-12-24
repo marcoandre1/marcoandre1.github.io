@@ -6,6 +6,7 @@
 
 [Deployment to GitHub pages](https://github.com/marcoandre1/marcoandre1.github.io#deployment-to-github-pages)  
 [Adding Tailwind CSS to Create React App](https://github.com/marcoandre1/marcoandre1.github.io#adding-tailwind-css-to-create-react-app)  
+[Formatting Code Automatically](https://github.com/marcoandre1/marcoandre1.github.io#formatting-code-automatically)  
 [React auto generated README](https://github.com/marcoandre1/marcoandre1.github.io#react-auto-generated-readme)  
 
 ## Deployment to GitHub Pages
@@ -107,6 +108,30 @@ import './index.css';
 ```
 
 Now, every time you run your project, as you would usually do, an `index.css` file will be generated in the `src` folder containing your tailwind CSS!
+
+## Formatting Code Automatically
+
+There is an official documentation on [Formatting Code Automatically](https://create-react-app.dev/docs/setting-up-your-editor#formatting-code-automatically). Here are the steps:  
+
+1. `npm install --save husky lint-staged prettier`  
+2. Update `package.json`:
+
+```json
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,md}": [
+      "prettier --write"
+    ]
+  }
+}
+```
+
+> **Note:** Because we are using **Tailwind CSS**, we recommend removing `css,scss` from `lint-staged`. This will improve the running time because prettier will not format those files.  
 
 ## React auto generated README
 

@@ -22,9 +22,17 @@ class App extends Component {
     super();
     this.state = {
       isDarkMode: document.querySelector("html").classList.contains("dark"),
+      isMenuOpen: false,
     };
     // Binding method
     this.onDarkModeToggle = this.onDarkModeToggle.bind(this);
+    this.onMobileMenuClick = this.onMobileMenuClick.bind(this);
+  }
+
+  onMobileMenuClick() {
+    this.setState({
+      isMenuOpen: !this.state.isMenuOpen,
+    });
   }
 
   onDarkModeToggle() {
@@ -52,6 +60,8 @@ class App extends Component {
                 <ConnectedNavigation
                   isDarkMode={this.state.isDarkMode}
                   onDarkModeToggle={this.onDarkModeToggle}
+                  isMenuOpen={this.state.isMenuOpen}
+                  onMobileMenuClick={this.onMobileMenuClick}
                 />
               </header>
               <main>

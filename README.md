@@ -1,12 +1,15 @@
 # Modokemdev
 
-<https://modokemdev.com/> is my personal landing page. As of November 2020, the website is built with Create React App and Tailwind CSS.
+<https://modokemdev.com/> is my personal website. As of December 2020, the website is built with [Create React App](https://create-react-app.dev/docs/getting-started/) and Tailwind CSS. This README explains some of the step I used to get a working website on GitHub Pages. If you have any question please open an issue. Thanks!
+
+> **NOTE:** to any one starting a new project, please consider [Next.js](https://nextjs.org/). The main reason I use **Create React App** _(CRA)_ is because this is an old repo and CRA was, at the time, a good solution. But Next.js is a newer and _far better_ solution to implement a React website. Take a look at my [speakers-app](https://github.com/marcoandre1/speakers-app) and my [nextjs-blog](https://github.com/marcoandre1/nextjs-blog) repositories, here on GitHub. That said, CRA apps are still very good. It really depends on your use case.  
 
 ## Index
 
 [Deployment to GitHub pages](https://github.com/marcoandre1/marcoandre1.github.io#deployment-to-github-pages)  
 [Adding Tailwind CSS to Create React App](https://github.com/marcoandre1/marcoandre1.github.io#adding-tailwind-css-to-create-react-app)  
 [Formatting Code Automatically](https://github.com/marcoandre1/marcoandre1.github.io#formatting-code-automatically)  
+[Adding Dark Mode with Tailwind CSS](https://github.com/marcoandre1/marcoandre1.github.io#adding-dark-mode-with-tailwind-css)  
 [React auto generated README](https://github.com/marcoandre1/marcoandre1.github.io#react-auto-generated-readme)  
 
 ## Deployment to GitHub Pages
@@ -132,6 +135,44 @@ There is an official documentation on [Formatting Code Automatically](https://cr
 ```
 
 > **Note:** Because we are using **Tailwind CSS**, we recommend removing `css,scss` from `lint-staged`. This will improve the running time because prettier will not format those files.  
+
+## Adding Dark Mode with Tailwind CSS
+
+Tailwind CSS offers the possibility to add [dark mode](https://tailwindcss.com/docs/dark-mode). All you need to do is update the `darkMode` setting in your `tailwind.config.js` file from `false` to `media` or `class`. In our case, I added `class` because it allows us to toggle dark mode manually.  
+
+```javascript
+// tailwind.config.js
+module.exports = {
+  darkMode: 'class',
+  // ...
+}
+```
+
+To enable dark mode with `class` you need to add the `dark` class to the `html` tag:
+
+```javascript
+<!-- Dark mode enabled -->
+<html class="dark">
+<body>
+  <!-- Will be black -->
+  <div class="bg-white dark:bg-black">
+    <!-- ... -->
+  </div>
+</body>
+</html>
+```
+
+Now, this is where it becomes tricky because you need to manipulate a DOM element, the `html` tag, with React. There is not a _good way_ of doing this. Which means that you can do it however you want because React does not offer a straightforward solution of doing this. Following the Tailwind CSS docs for dark mode, I implemented a solution which works quite well without adding any extra package. Please, take a look at `App.js` to see how this is done and the section below for further details.  
+
+### Toggling Dark Mode (extra notes)
+
+Toggling dark mode with React and Tailwind CSS can be a pain if you are not very familiar with either of one (my case). Keep in mind that Tailwind CSS docs don't offer a solution to implement this feature but rather guidelines. You really need to understand or try your best at understanding React and Tailwind CSS to get a _nice_ result.  
+
+Here are some of the articles that help me to implement the final solution:  
+
+- [How to Use Variables within Classes](https://www.pluralsight.com/guides/how-to-use-variables-within-classes): good starting point at understanding variables within classes, which is my case because `App.js` defines a class.  
+- [Tailwind UI docs React](https://tailwindui.com/documentation#js-react): great examples on how to implement Tailwind UI component into a React projects. The `DarkModeButton` component is based on the basic click handler demo.  
+- [Adding Lifecycle Methods to a Class](https://reactjs.org/docs/state-and-lifecycle.html#adding-lifecycle-methods-to-a-class): shows how to use `this.setState()` to apply updates to the component local state. I use it in `App.js` to return the values of `isDarkMode` and `isMenuOpen` which are Booleans that control CSS properties dynamically.  
 
 ## React auto generated README
 

@@ -4,7 +4,9 @@ import { ConnectedTaskList } from "./TaskList";
 
 export const Dashboard = ({ language }) => (
   <div>
-    <h2 className="text-gray-900 dark:text-white">{language.title}</h2>
+    <h2 className="font-bold text-xl text-gray-900 dark:text-white mb-2 mt-2 px-6">
+      {language.title}
+    </h2>
     <ConnectedTaskList
       key={language.id}
       id={language.id}

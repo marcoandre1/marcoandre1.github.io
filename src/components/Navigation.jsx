@@ -1,8 +1,9 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import DarkModeButton from "./DarkModeButton";
 
-const Navigation = ({ languages, lightMode, darkMode }) => (
+const Navigation = ({ languages, isDarkMode, onDarkModeToggle }) => (
   <nav className="flex items-center justify-between flex-wrap bg-gray-200 dark:bg-gray-800 mb-6 p-6 rounded-md">
     <div className="w-full block flex-grow">
       <div className="md:flex-grow">
@@ -15,15 +16,11 @@ const Navigation = ({ languages, lightMode, darkMode }) => (
             {language.name}
           </Link>
         ))}
-        <div className="block md:inline-block text-gray-300 hover:text-white mr-4">
-          <button onClick={lightMode} className="btn-blue">
-            Light
-          </button>
-        </div>
-        <div className="block md:inline-block text-gray-300 hover:text-white mr-4">
-          <button onClick={darkMode} className="btn-blue">
-            Dark
-          </button>
+        <div className="block md:inline-block mr-4">
+          <DarkModeButton
+            isDarkMode={isDarkMode}
+            onDarkModeToggle={onDarkModeToggle}
+          />
         </div>
       </div>
     </div>

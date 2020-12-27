@@ -18,36 +18,54 @@ if (
 }
 
 class App extends Component {
-  lightMode() {
-    document.querySelector("html").classList.remove("dark");
+  constructor() {
+    super();
+    this.state = {
+      isDarkMode: document.querySelector("html").classList.contains("dark"),
+    };
+    // Binding method
+    this.onDarkModeToggle = this.onDarkModeToggle.bind(this);
   }
 
-  darkMode() {
-    document.querySelector("html").classList.add("dark");
+  onDarkModeToggle() {
+    if (document.querySelector("html").classList.contains("dark")) {
+      document.querySelector("html").classList.remove("dark");
+    } else {
+      document.querySelector("html").classList.add("dark");
+    }
+    this.setDarkMode();
+  }
+
+  setDarkMode() {
+    this.setState({
+      isDarkMode: document.querySelector("html").classList.contains("dark"),
+    });
   }
 
   render() {
     return (
-      <div className="mx-4 my-3 bg-white dark:bg-black rounded-md">
-        <BrowserRouter>
-          <Provider store={store}>
-            <header>
-              <ConnectedNavigation
-                lightMode={this.lightMode}
-                darkMode={this.darkMode}
-              />
-            </header>
-            <main>
-              <Route exact path={`/`} render={() => <ConnectedDashboard />} />
-              <Route
-                exact
-                path={`/:id`}
-                render={({ match }) => <ConnectedDashboard match={match} />}
-              />
-            </main>
-            <ConnectedFooter />
-          </Provider>
-        </BrowserRouter>
+      <div className="bg-white dark:bg-black">
+        <div className="px-4 py-3">
+          <BrowserRouter>
+            <Provider store={store}>
+              <header>
+                <ConnectedNavigation
+                  isDarkMode={this.state.isDarkMode}
+                  onDarkModeToggle={this.onDarkModeToggle}
+                />
+              </header>
+              <main>
+                <Route exact path={`/`} render={() => <ConnectedDashboard />} />
+                <Route
+                  exact
+                  path={`/:id`}
+                  render={({ match }) => <ConnectedDashboard match={match} />}
+                />
+              </main>
+              <ConnectedFooter />
+            </Provider>
+          </BrowserRouter>
+        </div>
       </div>
     );
   }

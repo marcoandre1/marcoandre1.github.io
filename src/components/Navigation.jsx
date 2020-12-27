@@ -59,7 +59,7 @@ const Navigation = ({
           <Link
             to={`/${language.id}`}
             key={language.id}
-            className="text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-white px-3 py-2 rounded-md text-base font-medium"
+            className="text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             {language.name}
           </Link>

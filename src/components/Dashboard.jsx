@@ -1,9 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import { ConnectedTaskList } from "./TaskList";
+import { Helmet } from "react-helmet";
 
 export const Dashboard = ({ language }) => (
   <div>
+    <Helmet>
+      <title>{language.htmlTitle}</title>
+    </Helmet>
     <h2 className="font-bold text-xl text-gray-900 dark:text-white mb-2 mt-2 px-6">
       {language.title}
     </h2>
@@ -19,6 +23,11 @@ export const Dashboard = ({ language }) => (
 function mapStateToProps(state, ownProps) {
   let id = ownProps.match === undefined ? "en" : ownProps.match.params.id;
   let language = state.languages.find((language) => language.id === id);
+
+  if (language === undefined) {
+    id = 404;
+    language = state.pageNotFound.find((notFound) => notFound.id === id);
+  }
 
   return {
     id,

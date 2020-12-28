@@ -21,7 +21,10 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      isDarkMode: document.querySelector("html").classList.contains("dark"),
+      isDarkMode:
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches),
       isMenuOpen: false,
     };
     // Binding method

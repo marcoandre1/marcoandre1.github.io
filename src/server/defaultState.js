@@ -75,19 +75,19 @@ export const defaultState = {
     {
       name: "English",
       id: "en",
-      title: "Dashboard",
+      title: "Welcome to Modokemdev",
       description: "C# developer at day, Dragon Rider at night.",
     },
     {
       name: "Français",
       id: "fr",
-      title: "Tableau de bord",
+      title: "Bienvenue à Modokemdev",
       description: "Développeur C# le jour, Dragon Rider la nuit.",
     },
     {
       name: "Español",
       id: "es",
-      title: "Tablero",
+      title: "Bienvenido a Modokemdev",
       description: "Desarollador C# de día, Dragon Rider de noche.",
     },
   ],

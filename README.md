@@ -1,8 +1,8 @@
 # Modokemdev
 
-<https://modokemdev.com/> is my personal website. As of December 2020, the website is built with [Create React App](https://create-react-app.dev/docs/getting-started/) and Tailwind CSS. This README explains some of the step I used to get a working website on GitHub Pages. If you have any question please open an issue. Thanks!
+<https://modokemdev.com/> is my personal website. As of December 2020, this website is built with [Create React App](https://create-react-app.dev/docs/getting-started/) and [Tailwind CSS](https://tailwindcss.com/). This README explains some of the steps I used to get a working website on GitHub Pages. If you have any question please open an issue. Thanks!
 
-> **NOTE:** to any one starting a new project, please consider [Next.js](https://nextjs.org/). The main reason I use **Create React App** _(CRA)_ is because this is an old repo and CRA was, at the time, a good solution. But Next.js is a newer and _far better_ solution to implement a React website. Take a look at my [speakers-app](https://github.com/marcoandre1/speakers-app) and my [nextjs-blog](https://github.com/marcoandre1/nextjs-blog) repositories, here on GitHub. That said, CRA apps are still very good. It really depends on your use case.  
+> **NOTE:** to any one starting a new project, please consider [Next.js](https://nextjs.org/). The main reason I use **Create React App _(CRA)_** is because this is an old repo and CRA was, at the time, a good solution. But Next.js is a newer and _far better_ solution to implement a React website. Take a look at my [speakers-app](https://github.com/marcoandre1/speakers-app) and my [nextjs-blog](https://github.com/marcoandre1/nextjs-blog) repositories, here on GitHub. That said, CRA apps are still very good and probably better for beginners. It really depends on your use case.  
 
 ## Index
 
@@ -10,7 +10,10 @@
 [Adding Tailwind CSS to Create React App](https://github.com/marcoandre1/marcoandre1.github.io#adding-tailwind-css-to-create-react-app)  
 [Formatting Code Automatically](https://github.com/marcoandre1/marcoandre1.github.io#formatting-code-automatically)  
 [Adding Dark Mode with Tailwind CSS](https://github.com/marcoandre1/marcoandre1.github.io#adding-dark-mode-with-tailwind-css)  
+[Pre-Rendering into Static HTML Files](https://github.com/marcoandre1/marcoandre1.github.io#pre-rendering-into-static-html-files)  
 [React auto generated README](https://github.com/marcoandre1/marcoandre1.github.io#react-auto-generated-readme)  
+[Available Scripts](https://github.com/marcoandre1/marcoandre1.github.io#available-scripts)  
+[Learn More](https://github.com/marcoandre1/marcoandre1.github.io#learn-more)  
 
 ## Deployment to GitHub Pages
 
@@ -162,7 +165,7 @@ To enable dark mode with `class` you need to add the `dark` class to the `html` 
 </html>
 ```
 
-Now, this is where it becomes tricky because you need to manipulate a DOM element, the `html` tag, with React. There is not a _good way_ of doing this. Which means that you can do it however you want because React does not offer a straightforward solution of doing this. Following the Tailwind CSS docs for dark mode, I implemented a solution which works quite well without adding any extra package. Please, take a look at `App.js` to see how this is done and the section below for further details.  
+Now, this is where it becomes tricky because you need to manipulate a DOM element, _the `html` tag_, with React. There is not a _good way_ of doing this. Which means that you can do it however you want because React does not offer a straightforward solution of doing this. Following the Tailwind CSS docs for dark mode, I implemented a solution which works quite well without adding any extra package. Please, take a look at `App.js` to see how this is done and the section below for further details.  
 
 ### Toggling Dark Mode (extra notes)
 
@@ -170,9 +173,74 @@ Toggling dark mode with React and Tailwind CSS can be a pain if you are not very
 
 Here are some of the articles that help me to implement the final solution:  
 
-- [How to Use Variables within Classes](https://www.pluralsight.com/guides/how-to-use-variables-within-classes): good starting point at understanding variables within classes, which is my case because `App.js` defines a class.  
+- [How to Use Variables within Classes](https://www.pluralsight.com/guides/how-to-use-variables-within-classes): good starting point at understanding variables within classes, which is my case because `App.js` is defined as a class.  
 - [Tailwind UI docs React](https://tailwindui.com/documentation#js-react): great examples on how to implement Tailwind UI component into a React projects. The `DarkModeButton` component is based on the basic click handler demo.  
 - [Adding Lifecycle Methods to a Class](https://reactjs.org/docs/state-and-lifecycle.html#adding-lifecycle-methods-to-a-class): shows how to use `this.setState()` to apply updates to the component local state. I use it in `App.js` to return the values of `isDarkMode` and `isMenuOpen` which are Booleans that control CSS properties dynamically.  
+- [componentDidMount()](https://reactjs.org/docs/react-component.html#componentdidmount): is invoked immediately after a component is mounted. This comes particularly handy for defining the initial dark mode state.  
+
+## Pre-Rendering into Static HTML Files
+
+CRA offers some guidelines on implementing [Pre-Rendering into Static HTML Files](https://create-react-app.dev/docs/pre-rendering-into-static-html-files) and a link to a [zero-configuration pre-rendering tutorial](https://medium.com/superhighfives/an-almost-static-stack-6df0a2791319).  
+
+First of all, remember that this website is meant to be deployed on **GitHub Pages**. As counter intuitive as it may sound, deploying a _complex_ website to GitHub Pages, _for instance having more than one route_, is not a straightforward task.  
+
+**_Why do we even care about generating static HTML files?_** Well, in case you don't know, static generation can improve your website loading time because you are rendering HTML files for every route. The problem is that React uses client-side JavaScript to populate data. This can be _slow_ if you have lots of data to load or worst, your JavaScript bundle can just fail, in which case your page is not going to load. You can read a bit more at [When to Use Static Generation v.s. Server-side Rendering](https://modokemdev.com/nextjs-blog/posts/ssg-ssr). Now, if it would have been just for this reason, I wouldn't have add static generation because I feel it's useless in our case. _However, ..._  
+
+**Static Generation is the only way to correctly add a _complex website (more than one route)_ to GitHub Pages.**  
+
+Adding static generation for CRA is _easy_. Simply add [`react-snap`]() and [`react-helmet`](https://github.com/nfl/react-helmet) to your project:  
+
+```console
+npm install --save-dev react-snap
+npm install --save react-helmet
+```
+
+Update `package.json`:  
+
+```json
+"scripts": {
+  "postbuild": "react-snap"
+}
+
+```
+
+Update `src/index.js`:
+
+```js
+import { hydrate, render } from "react-dom";
+
+const rootElement = document.getElementById("root");
+if (rootElement.hasChildNodes()) {
+  hydrate(<App />, rootElement);
+} else {
+  render(<App />, rootElement);
+}
+```
+
+That's it! You can now throw a build and see the generated files. _Wait, if that's all, why did we install `react-helmet`?!_
+
+You might get some errors while building your website with `react-snap`. Here are the 2 I encountered and how I managed them:  
+
+1. **General Error:** Ok, so the error wasn't clear but after some digging I found out that I wasn't managing `404` redirect, that is, an invalid request. `react-snap` will generate a `404.html` file. This file will be based on an invalid request to your website. For instance, let's say that you have a route for path `/1` and `/2` but not for `/3`, how is you CRA dev server managing it? Is it throwing an error? If that's the case, you need to manage it. _Easiest way of doing it is to catch the error, maybe an `undefined` variable, and work a solution from there._  
+2. **[404 page title does not contain "404" string](https://github.com/stereobooster/react-snap/issues/91#issue-285327619):** Simply add `<title>404 - Page not found</title>` to your `404.html` file. And this is why we _need_ **`react-helmet`**. Keep in mind that there are probably other ways of doing this but it seems a good approach globally. For this to work, simply update your react component to import `react-helmet` and define the `title` html tag:  
+
+```jsx
+import { Helmet } from "react-helmet";
+
+class App extends Component {
+  render () {
+    return (
+        <div>
+            <Helmet>
+                <title>404 - Page not found</title>
+            </Helmet>
+        </div>
+    );
+  }
+};
+```
+
+> **Note:** take a look at my `Dashboard` component to see how I implemented it.  
 
 ## React auto generated README
 

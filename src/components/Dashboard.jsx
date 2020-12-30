@@ -4,7 +4,7 @@ import { ConnectedTaskList } from "./TaskList";
 import { Helmet } from "react-helmet";
 import PageNotFound from "./PageNotFound";
 
-export const Dashboard = ({ language, isValidRequest }) => (
+export const Dashboard = ({ id, language, isValidRequest }) => (
   <div>
     <Helmet>
       <title>{language.htmlTitle}</title>
@@ -24,7 +24,7 @@ export const Dashboard = ({ language, isValidRequest }) => (
     )}
     {!isValidRequest && (
       <div>
-        <PageNotFound />
+        <PageNotFound id={id} />
       </div>
     )}
   </div>

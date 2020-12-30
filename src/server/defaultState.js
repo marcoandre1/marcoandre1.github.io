@@ -74,21 +74,21 @@ export const defaultState = {
   languages: [
     {
       id: "en",
-      htmlTitle: "modokemdev - en",
+      htmlTitle: "Modokemdev | en",
       name: "English",
       title: "Welcome to Modokemdev",
       description: "C# developer at day, Dragon Rider at night.",
     },
     {
       id: "fr",
-      htmlTitle: "modokemdev - fr",
+      htmlTitle: "Modokemdev | fr",
       name: "Français",
       title: "Bienvenue à Modokemdev",
       description: "Développeur C# le jour, Dragon Rider la nuit.",
     },
     {
       id: "es",
-      htmlTitle: "modokemdev - es",
+      htmlTitle: "Modokemdev | es",
       name: "Español",
       title: "Bienvenido a Modokemdev",
       description: "Desarollador C# de día, Dragon Rider de noche.",

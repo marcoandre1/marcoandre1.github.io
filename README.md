@@ -14,6 +14,7 @@
 [React auto generated README](https://github.com/marcoandre1/marcoandre1.github.io#react-auto-generated-readme)  
 [Available Scripts](https://github.com/marcoandre1/marcoandre1.github.io#available-scripts)  
 [Learn More](https://github.com/marcoandre1/marcoandre1.github.io#learn-more)  
+[Acknowledgments](https://github.com/marcoandre1/marcoandre1.github.io#acknowledgments)  
 
 ## Deployment to GitHub Pages
 
@@ -180,6 +181,8 @@ Here are some of the articles that help me to implement the final solution:
 
 ## Pre-Rendering into Static HTML Files
 
+> **NOTE:** CRA docs has a section on [deploying to GitHub Pages](https://create-react-app.dev/docs/deployment#github-pages) that includes [Notes on client-side routing](https://create-react-app.dev/docs/deployment/#notes-on-client-side-routing). It offers some hacks to add a router to a project hosted on GitHub Pages. This section, _Pre-Rendering into Static HTML Files_, will help you with that but alternatively you can also take a look at [spa-github-pages](https://github.com/rafgraph/spa-github-pages).  
+
 CRA offers some guidelines on implementing [Pre-Rendering into Static HTML Files](https://create-react-app.dev/docs/pre-rendering-into-static-html-files) and a link to a [zero-configuration pre-rendering tutorial](https://medium.com/superhighfives/an-almost-static-stack-6df0a2791319).  
 
 First of all, remember that this website is meant to be deployed on **GitHub Pages**. As counter intuitive as it may sound, deploying a _complex_ website to GitHub Pages, _for instance having more than one route_, is not a straightforward task.  
@@ -312,3 +315,11 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## Acknowledgments
+
+- [Create React App](https://create-react-app.dev/)  
+- [Tailwind CSS](https://tailwindcss.com/)  
+- Icons from [Heroicons](https://heroicons.dev/)  
+- [react-snap](https://github.com/stereobooster/react-snap)  
+- And all the other amazing dependencies referenced in this README.

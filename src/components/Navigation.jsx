@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import MobileMenuButton from "./MobileMenuButton";
 import DarkModeButton from "./DarkModeButton";
+import LogoMark from "./LogoMark";
 
 const Navigation = ({
   languages,
@@ -19,18 +20,7 @@ const Navigation = ({
           onMobileMenuClick={onMobileMenuClick}
         />
         <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-          <div className="flex-shrink-0 flex items-center">
-            <img
-              className="block lg:hidden h-8 w-auto"
-              src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-              alt="Workflow"
-            />
-            <img
-              className="hidden lg:block h-8 w-auto"
-              src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-              alt="Workflow"
-            />
-          </div>
+          <LogoMark isDarkMode={isDarkMode} />
           <div className="hidden sm:block sm:ml-6">
             <div className="flex space-x-4">
               {languages.map((language) => (

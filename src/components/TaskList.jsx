@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import profile from "../images/profile.png";
+import ProfileImage from "./ProfileImage";
 
 export const TaskList = ({ name, description }) => (
   <div className="component-highlight max-w-sm rounded overflow-hidden shadow-lg items-center">
-    <img className="w-full" src={profile} alt="Profile" />
+    <ProfileImage id={profile} />
     <div className="px-6 py-4">
       <div className="font-bold text-xl text-gray-600 dark:text-gray-300 mb-2">
         {name}

@@ -3,9 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import MobileMenuButton from "./MobileMenuButton";
 import DarkModeButton from "./DarkModeButton";
-import logo from "../images/modokemdev-logo.svg";
-import logoMark from "../images/modokemdev-logo-mark.svg";
-import logoMarkBlackFont from "../images/modokemdev-logo-mark-black-font.svg";
+import LogoMark from "./LogoMark";
 
 const Navigation = ({
   languages,
@@ -22,18 +20,7 @@ const Navigation = ({
           onMobileMenuClick={onMobileMenuClick}
         />
         <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-          <div className="flex-shrink-0 flex items-center">
-            <img
-              className="block lg:hidden h-8 w-auto"
-              src={logo}
-              alt="Workflow"
-            />
-            <img
-              className="hidden lg:block h-8 w-auto"
-              src={isDarkMode ? logoMark : logoMarkBlackFont}
-              alt="Workflow"
-            />
-          </div>
+          <LogoMark isDarkMode={isDarkMode} />
           <div className="hidden sm:block sm:ml-6">
             <div className="flex space-x-4">
               {languages.map((language) => (

@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import MobileMenuButton from "./MobileMenuButton";
 import DarkModeButton from "./DarkModeButton";
+import logo from "../images/modokemdev-logo.svg";
+import logoMark from "../images/modokemdev-logo-mark.svg";
+import logoMarkBlackFont from "../images/modokemdev-logo-mark-black-font.svg";
 
 const Navigation = ({
   languages,
@@ -22,12 +25,12 @@ const Navigation = ({
           <div className="flex-shrink-0 flex items-center">
             <img
               className="block lg:hidden h-8 w-auto"
-              src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+              src={logo}
               alt="Workflow"
             />
             <img
               className="hidden lg:block h-8 w-auto"
-              src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+              src={isDarkMode ? logoMark : logoMarkBlackFont}
               alt="Workflow"
             />
           </div>

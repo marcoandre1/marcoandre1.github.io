@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { ConnectedTaskList } from "./TaskList";
 import { Helmet } from "react-helmet";
 import PageNotFound from "./PageNotFound";
+import Projects from "./Projects";
 
 export const Dashboard = ({ id, language, isValidRequest }) => (
   <div>
@@ -11,15 +12,23 @@ export const Dashboard = ({ id, language, isValidRequest }) => (
     </Helmet>
     {isValidRequest && (
       <div>
-        <h2 className="font-bold text-xl text-gray-900 dark:text-white mb-2 mt-2 px-6">
-          {language.title}
-        </h2>
-        <ConnectedTaskList
-          key={language.id}
-          id={language.id}
-          name={language.name}
-          description={language.description}
-        />
+        <div>
+          <h2 className="font-bold text-xl text-gray-900 dark:text-white mb-2 mt-2 px-6">
+            {language.title}
+          </h2>
+          <ConnectedTaskList
+            key={language.id}
+            id={language.id}
+            name={language.name}
+            description={language.description}
+          />
+        </div>
+        <div>
+          <h2 className="font-bold text-xl text-gray-900 dark:text-white mb-2 mt-2 px-6">
+            {language.title}
+          </h2>
+          <Projects />
+        </div>
       </div>
     )}
     {!isValidRequest && (

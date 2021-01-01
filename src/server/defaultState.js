@@ -11,37 +11,28 @@ export const defaultState = {
   ],
   projects: [
     {
-      name: "Douglas Crockford",
+      name: "meeting-API",
       id: 1124,
-      firstName: "Douglas",
-      lastName: "Crockford",
       sat: true,
       sun: false,
       isFavorite: false,
-      bio:
-        "Douglas Crockford discovered the JSON Data Interchange Format. He is also the author of _JavaScript: The Good Parts_. He has been called a guru, but he is actually more of a mahatma.",
+      bio: "Meeting API developped with Laravel.",
     },
     {
-      name: "Tamara Baker",
+      name: "speakers-app",
       id: 1530,
-      firstName: "Tamara",
-      lastName: "Baker",
       sat: false,
       sun: true,
       isFavorite: true,
-      bio:
-        "Tammy has held a number of executive and management roles over the past 15 years, including VP engineering Roles at Molekule Inc., Cantaloupe Systems, E-Color, and Untangle Inc.",
+      bio: "Speakers App is a Next.js application deployed to GitHub Pages.",
     },
     {
-      name: "Eugene Chuvyrov",
+      name: "nextjs-blog",
       id: 10803,
-      firstName: "Eugene",
-      lastName: "Chuvyrov",
       sat: true,
       sun: false,
       isFavorite: false,
-      bio:
-        "Eugene Chuvyrov is  a Senior Cloud Architect at Microsoft. He works directly with both startups and enterprises to enable their solutions in Microsoft cloud, and to make Azure better as a result of this work with partners.",
+      bio: "Next.js blog app deployed to GitHub Pages using gh-pages.",
     },
   ],
   languages: [

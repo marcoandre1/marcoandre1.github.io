@@ -16,13 +16,13 @@ export default function Projects({ projects }) {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-12">
         {projects
           .filter((rec) => {
-            const targetString = `${rec.firstName} ${rec.lastName}`.toLowerCase();
+            const targetString = `${rec.name}`.toLowerCase();
             return searchQuery.length === 0
               ? true
               : targetString.includes(searchQuery.toLocaleLowerCase());
           })
-          .map((speaker) => (
-            <Project key={speaker.id} {...speaker} />
+          .map((project) => (
+            <Project key={project.id} {...project} />
           ))}
       </div>
     </div>

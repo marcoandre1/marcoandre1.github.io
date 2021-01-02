@@ -1,3 +1,7 @@
+import meetingAPI from "../images/meeting-API.png";
+import speakersApp from "../images/speakers-app.png";
+import nextjsBlog from "../images/nextjs-blog.png";
+
 export const defaultState = {
   users: [
     {
@@ -11,24 +15,27 @@ export const defaultState = {
   ],
   projects: [
     {
-      name: "meeting-API",
       id: 1124,
+      name: "meeting-API",
+      image: meetingAPI,
       sat: true,
       sun: false,
       isFavorite: false,
       bio: "Meeting API developped with Laravel.",
     },
     {
-      name: "speakers-app",
       id: 1530,
+      name: "speakers-app",
+      image: speakersApp,
       sat: false,
       sun: true,
       isFavorite: true,
       bio: "Speakers App is a Next.js application deployed to GitHub Pages.",
     },
     {
-      name: "nextjs-blog",
       id: 10803,
+      name: "nextjs-blog",
+      image: nextjsBlog,
       sat: true,
       sun: false,
       isFavorite: false,

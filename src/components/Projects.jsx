@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import ProjectSearchBar from "./ProjectSearchBar";
 import Project from "./Project";
 
-export default function Projects({ projects }) {
+export default function Projects({ projects, isDarkMode }) {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
@@ -22,7 +22,7 @@ export default function Projects({ projects }) {
               : targetString.includes(searchQuery.toLocaleLowerCase());
           })
           .map((project) => (
-            <Project key={project.id} {...project} />
+            <Project key={project.id} {...project} isDarkMode={isDarkMode} />
           ))}
       </div>
     </div>

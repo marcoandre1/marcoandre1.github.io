@@ -71,11 +71,22 @@ class App extends Component {
                 />
               </header>
               <main>
-                <Route exact path={`/`} render={() => <ConnectedDashboard />} />
+                <Route
+                  exact
+                  path={`/`}
+                  render={() => (
+                    <ConnectedDashboard isDarkMode={this.state.isDarkMode} />
+                  )}
+                />
                 <Route
                   exact
                   path={`/:id`}
-                  render={({ match }) => <ConnectedDashboard match={match} />}
+                  render={({ match }) => (
+                    <ConnectedDashboard
+                      match={match}
+                      isDarkMode={this.state.isDarkMode}
+                    />
+                  )}
                 />
               </main>
               <ConnectedFooter />

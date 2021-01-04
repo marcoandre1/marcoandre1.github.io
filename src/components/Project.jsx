@@ -10,7 +10,9 @@ export default function Project({
   url,
   repo,
   isDarkMode,
+  language,
 }) {
+  let description = bio.find((bio) => bio.id === language.id);
   return (
     <div className="bg-gray-100 dark:bg-gray-800 rounded overflow-hidden shadow-lg p-6">
       <div className="grid grid-cols-4 mb-6">
@@ -24,7 +26,7 @@ export default function Project({
       <div className="mb-6">
         <ProfileImage id={image} />
       </div>
-      <div className="text-gray-600 dark:text-white">{bio}</div>
+      <div className="text-gray-600 dark:text-white">{description.text}</div>
     </div>
   );
 }

@@ -27,7 +27,7 @@ export const Dashboard = ({ id, language, isValidRequest, isDarkMode }) => (
           <h2 className="font-bold text-xl text-gray-900 dark:text-white mb-2 mt-2 px-6">
             {language.title}
           </h2>
-          <ConnectedProjects isDarkMode={isDarkMode} />
+          <ConnectedProjects isDarkMode={isDarkMode} language={language} />
         </div>
       </div>
     )}

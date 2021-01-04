@@ -15,28 +15,72 @@ export const defaultState = {
   ],
   projects: [
     {
-      id: 1124,
+      id: 1,
       name: "meeting-API",
       image: meetingAPI,
       url: "https://github.com/marcoandre1/meeting-API",
       repo: "https://github.com/marcoandre1/meeting-API",
-      bio: "Meeting API developped with Laravel.",
+      bio: [
+        {
+          id: "en",
+          text: "Meeting API developped with Laravel.",
+        },
+        {
+          id: "fr",
+          text: "Meeting API développé avec Laravel.",
+        },
+        {
+          id: "es",
+          text: "Meeting API desarollado con Laravel",
+        },
+      ],
     },
     {
-      id: 1530,
+      id: 2,
       name: "speakers-app",
       image: speakersApp,
       url: "https://modokemdev.com/speakers-app/",
       repo: "https://github.com/marcoandre1/speakers-app",
-      bio: "Speakers App is a Next.js application deployed to GitHub Pages.",
+      bio: [
+        {
+          id: "en",
+          text:
+            "Speakers App is a Next.js application deployed to GitHub Pages.",
+        },
+        {
+          id: "fr",
+          text:
+            "Speakers App est une application Next.js déployé sur GitHub Pages.",
+        },
+        {
+          id: "es",
+          text:
+            "Speakers App es una aplicación Next.js desplegada sobre GitHub Pages.",
+        },
+      ],
     },
     {
-      id: 10803,
+      id: 3,
       name: "nextjs-blog",
       image: nextjsBlog,
       url: "https://modokemdev.com/nextjs-blog/",
       repo: "https://github.com/marcoandre1/nextjs-blog",
-      bio: "Next.js blog app deployed to GitHub Pages using gh-pages.",
+      bio: [
+        {
+          id: "en",
+          text: "Next.js blog app deployed to GitHub Pages using gh-pages.",
+        },
+        {
+          id: "fr",
+          text:
+            "Aplication Next.js de type blog déployé sur GitHub Pages à l'aide de gh-pages.",
+        },
+        {
+          id: "es",
+          text:
+            "Aplicación Next.js de tipo blog desplegada sobre GitHub Pages con la ayuda de gh-pages.",
+        },
+      ],
     },
   ],
   languages: [

@@ -9,7 +9,7 @@ const TranslateDropDown = ({ isTranslateMenuOpen, onTranslateToggle }) => {
         aria-haspopup={isTranslateMenuOpen}
         type="button"
         onClick={onTranslateToggle}
-        className="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+        className="p-1 rounded-full text-gray-600 dark:text-gray-400 hover:text-gray-400 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
       >
         <span className="sr-only">Translate</span>
         <svg
@@ -18,6 +18,7 @@ const TranslateDropDown = ({ isTranslateMenuOpen, onTranslateToggle }) => {
           stroke="currentColor"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
         >
           <path
             strokeLinecap="round"

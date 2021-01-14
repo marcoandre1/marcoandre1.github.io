@@ -1,6 +1,6 @@
 import React from "react";
 import GitHubButton from "./GitHubButton";
-import ProfileImage from "./ProfileImage";
+import ProjectImage from "./ProjectImage";
 
 export default function Project({
   id,
@@ -12,7 +12,7 @@ export default function Project({
   isDarkMode,
   language,
 }) {
-  let description = bio.find((bio) => bio.id === language.id);
+  let description = bio.find((bio) => bio.language === language.id);
   return (
     <div className="bg-gray-100 dark:bg-gray-800 rounded overflow-hidden shadow-lg p-6">
       <div className="grid grid-cols-4 mb-6">
@@ -24,7 +24,7 @@ export default function Project({
         </div>
       </div>
       <div className="mb-6">
-        <ProfileImage id={image} />
+        <ProjectImage id={image} />
       </div>
       <div className="text-gray-600 dark:text-white">{description.text}</div>
     </div>

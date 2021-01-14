@@ -44,8 +44,18 @@ class App extends Component {
   onDarkModeToggle() {
     if (document.querySelector("html").classList.contains("dark")) {
       document.querySelector("html").classList.remove("dark");
+      if (localStorage.theme === undefined) {
+        localStorage.setItem("theme", "light");
+      } else {
+        localStorage.theme = "light";
+      }
     } else {
       document.querySelector("html").classList.add("dark");
+      if (localStorage.theme === undefined) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.theme = "dark";
+      }
     }
     this.setDarkMode();
   }

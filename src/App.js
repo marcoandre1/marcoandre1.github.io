@@ -12,10 +12,12 @@ class App extends Component {
     this.state = {
       isDarkMode: false,
       isMenuOpen: false,
+      isTranslateMenuOpen: false,
     };
     // Binding method
     this.onDarkModeToggle = this.onDarkModeToggle.bind(this);
     this.onMobileMenuClick = this.onMobileMenuClick.bind(this);
+    this.onTranslateToggle = this.onTranslateToggle.bind(this);
   }
 
   componentDidMount() {
@@ -38,6 +40,12 @@ class App extends Component {
   onMobileMenuClick() {
     this.setState({
       isMenuOpen: !this.state.isMenuOpen,
+    });
+  }
+
+  onTranslateToggle() {
+    this.setState({
+      isTranslateMenuOpen: !this.state.isTranslateMenuOpen,
     });
   }
 
@@ -78,6 +86,8 @@ class App extends Component {
                   onDarkModeToggle={this.onDarkModeToggle}
                   isMenuOpen={this.state.isMenuOpen}
                   onMobileMenuClick={this.onMobileMenuClick}
+                  isTranslateMenuOpen={this.state.isTranslateMenuOpen}
+                  onTranslateToggle={this.onTranslateToggle}
                 />
               </header>
               <main>

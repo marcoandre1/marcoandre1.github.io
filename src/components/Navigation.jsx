@@ -46,6 +46,7 @@ const Navigation = ({
           <TranslateDropDown
             isTranslateMenuOpen={isTranslateMenuOpen}
             onTranslateToggle={onTranslateToggle}
+            languages={languages}
           />
         </div>
       </div>

@@ -1,7 +1,12 @@
 import React from "react";
 import { Transition } from "@headlessui/react";
+import { Link } from "react-router-dom";
 
-const TranslateDropDown = ({ isTranslateMenuOpen, onTranslateToggle }) => {
+const TranslateDropDown = ({
+  isTranslateMenuOpen,
+  onTranslateToggle,
+  languages,
+}) => {
   return (
     <div className="ml-3 relative">
       <button
@@ -9,7 +14,7 @@ const TranslateDropDown = ({ isTranslateMenuOpen, onTranslateToggle }) => {
         aria-haspopup={isTranslateMenuOpen}
         type="button"
         onClick={onTranslateToggle}
-        className="p-1 rounded-full text-gray-600 dark:text-gray-400 hover:text-gray-400 dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+        className="p-1 rounded-full text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
       >
         <span className="sr-only">Translate</span>
         <svg
@@ -44,27 +49,16 @@ const TranslateDropDown = ({ isTranslateMenuOpen, onTranslateToggle }) => {
           aria-orientation="vertical"
           aria-labelledby="user-menu"
         >
-          <a
-            href="https://www.google.com/"
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-            role="menuitem"
-          >
-            Your Profile
-          </a>
-          <a
-            href="https://www.google.com/"
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-            role="menuitem"
-          >
-            Settings
-          </a>
-          <a
-            href="https://www.google.com/"
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-            role="menuitem"
-          >
-            Sign out
-          </a>
+          {languages.map((language) => (
+            <Link
+              to={`/${language.id}`}
+              key={language.id}
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              role="menuitem"
+            >
+              {language.name}
+            </Link>
+          ))}
         </div>
       </Transition>
     </div>

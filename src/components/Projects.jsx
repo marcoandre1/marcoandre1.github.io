@@ -8,27 +8,29 @@ export default function Projects({ projects, isDarkMode, language }) {
   const [searchQuery, setSearchQuery] = useState("");
 
   return (
-    <div>
-      <ProjectSearchBar
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
-      />
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-12">
-        {projects
-          .filter((rec) => {
-            const targetString = `${rec.name}`.toLowerCase();
-            return searchQuery.length === 0
-              ? true
-              : targetString.includes(searchQuery.toLocaleLowerCase());
-          })
-          .map((project) => (
-            <Project
-              key={project.id}
-              {...project}
-              isDarkMode={isDarkMode}
-              language={language}
-            />
-          ))}
+    <div className="bg-gray-100 dark:bg-gray-900 rounded-xl py-4">
+      <div className="px-6">
+        <ProjectSearchBar
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+        />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-12">
+          {projects
+            .filter((rec) => {
+              const targetString = `${rec.name}`.toLowerCase();
+              return searchQuery.length === 0
+                ? true
+                : targetString.includes(searchQuery.toLocaleLowerCase());
+            })
+            .map((project) => (
+              <Project
+                key={project.id}
+                {...project}
+                isDarkMode={isDarkMode}
+                language={language}
+              />
+            ))}
+        </div>
       </div>
     </div>
   );

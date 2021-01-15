@@ -18,7 +18,7 @@ export const Dashboard = ({ id, language, isValidRequest, isDarkMode }) => (
           </h2>
           <ConnectedTaskList key={language.id} {...language} />
         </div>
-        <div>
+        <div className="pt-3">
           <h2 className="font-bold text-xl text-gray-900 dark:text-white mb-2 mt-2 px-6">
             {language.subTitle}
           </h2>

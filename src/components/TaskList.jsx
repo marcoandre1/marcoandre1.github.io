@@ -6,7 +6,7 @@ import BioCard from "./BioCard";
 
 export const TaskList = ({ id, description, bios }) => (
   <div className="md:flex bg-gray-100 dark:bg-gray-900 rounded-xl p-8 md:p-0">
-    <div className="bg-gray-100 dark:bg-gray-800 md:w-full md:h-auto md:rounded-xl rounded-xl shadow-2xl mx-auto md:ml-4 md:my-4 md:p-8">
+    <div className="bg-gray-100 dark:bg-gray-800 md:w-full md:h-auto md:rounded-xl rounded-xl shadow-2xl mx-auto md:ml-4 md:my-4 p-8 md:p-4">
       <ProfileImage id={profile} />
       <div className="px-4 py-4 md:px-2">
         <div className="font-bold text-xl text-gray-600 dark:text-gray-300 mb-2">

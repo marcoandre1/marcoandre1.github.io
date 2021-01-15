@@ -14,7 +14,7 @@ export default function Project({
 }) {
   let description = bio.find((bio) => bio.language === language.id);
   return (
-    <div className="bg-gray-100 dark:bg-gray-800 rounded overflow-hidden shadow-lg p-6">
+    <div className="bg-gray-100 dark:bg-gray-800 rounded overflow-hidden shadow-2xl p-6">
       <div className="grid grid-cols-4 mb-6">
         <div className="text-black dark:text-white hover:text-blue-700 dark:hover:text-indigo-300 font-bold text-lg col-span-3">
           <a href={url}>{`${name}`}</a>

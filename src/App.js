@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Redirect } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { ConnectedDashboard } from "./components/Dashboard";
@@ -91,13 +91,8 @@ class App extends Component {
                 />
               </header>
               <main>
-                <Route
-                  exact
-                  path={`/`}
-                  render={() => (
-                    <ConnectedDashboard isDarkMode={this.state.isDarkMode} />
-                  )}
-                />
+                <Route exact path={`/`} />
+                <Redirect to="/en" />
                 <Route
                   exact
                   path={`/:id`}

@@ -5,6 +5,7 @@ import { store } from "./store";
 import { ConnectedDashboard } from "./components/Dashboard";
 import { ConnectedNavigation } from "./components/Navigation";
 import { ConnectedFooter } from "./components/Footer";
+import NoMatch from "./components/NoMatch";
 
 class App extends Component {
   constructor() {
@@ -91,8 +92,9 @@ class App extends Component {
                 />
               </header>
               <main>
-                <Route exact path={`/`} />
-                <Redirect to="/en" />
+                <Route exact path={`/`}>
+                  <Redirect to="/en" />
+                </Route>
                 <Route
                   exact
                   path={`/:id`}
@@ -103,6 +105,7 @@ class App extends Component {
                     />
                   )}
                 />
+                <Route exact path="/:id/*" render={() => <NoMatch />} />
               </main>
               <ConnectedFooter />
             </Provider>

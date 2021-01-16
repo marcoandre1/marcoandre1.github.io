@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import { ConnectedDashboard } from "./components/Dashboard";
@@ -92,20 +92,22 @@ class App extends Component {
                 />
               </header>
               <main>
-                <Route exact path={`/`}>
-                  <Redirect to="/en" />
-                </Route>
-                <Route
-                  exact
-                  path={`/:id`}
-                  render={({ match }) => (
-                    <ConnectedDashboard
-                      match={match}
-                      isDarkMode={this.state.isDarkMode}
-                    />
-                  )}
-                />
-                <Route exact path="/:id/*" render={() => <NoMatch />} />
+                <Switch>
+                  <Route exact path={`/`}>
+                    <Redirect to="/en" />
+                  </Route>
+                  <Route
+                    exact
+                    path={`/:id`}
+                    render={({ match }) => (
+                      <ConnectedDashboard
+                        match={match}
+                        isDarkMode={this.state.isDarkMode}
+                      />
+                    )}
+                  />
+                  <Route exact path="/:id/*" render={() => <NoMatch />} />
+                </Switch>
               </main>
               <ConnectedFooter />
             </Provider>

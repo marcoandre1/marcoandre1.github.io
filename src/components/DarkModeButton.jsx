@@ -7,9 +7,7 @@ const DarkModeButton = ({ isDarkMode, onDarkModeToggle }) => {
       aria-checked={isDarkMode}
       tabIndex="0"
       onClick={onDarkModeToggle}
-      className={`${
-        isDarkMode ? "bg-indigo-600" : "bg-gray-500"
-      } relative inline-block flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:shadow-outline`}
+      className="bg-gray-500 dark:bg-indigo-600 relative inline-block flex-shrink-0 h-6 w-11 border-2 border-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:shadow-outline"
     >
       <span
         aria-hidden="true"

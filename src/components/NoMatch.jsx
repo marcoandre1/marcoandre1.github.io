@@ -1,6 +1,9 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
-export default function PageNotFound({ id }) {
+export default function NoMatch() {
+  let location = useLocation();
+
   return (
     <div className="flex justify-center">
       <div class="h-screen -my-24 flex flex-wrap content-center">
@@ -9,11 +12,12 @@ export default function PageNotFound({ id }) {
             <h2 className="font-bold text-gray-900 dark:text-white mb-2 flex justify-center">
               404 | This page could not be found.
             </h2>
-            <div className="font-bold text-gray-600 dark:text-gray-300 flex justify-center">
-              The path,{" "}
-              <span className="bg-gray-200 dark:bg-indigo-600">/{id}</span>, did
-              not match any route.
-            </div>
+            <h3 className="font-bold text-gray-600 dark:text-gray-300 flex justify-center">
+              No match for{" "}
+              <code className="bg-gray-200 dark:bg-indigo-600">
+                {location.pathname}
+              </code>
+            </h3>
           </div>
         </div>
       </div>

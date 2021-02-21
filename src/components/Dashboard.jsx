@@ -1,25 +1,29 @@
 import React from "react";
 import { connect } from "react-redux";
 import { ConnectedTaskList } from "./TaskList";
+import { ConnectedProjects } from "./Projects";
 import { Helmet } from "react-helmet";
 import PageNotFound from "./PageNotFound";
 
-export const Dashboard = ({ id, language, isValidRequest }) => (
+export const Dashboard = ({ id, language, isValidRequest, isDarkMode }) => (
   <div>
     <Helmet>
       <title>{language.htmlTitle}</title>
     </Helmet>
     {isValidRequest && (
       <div>
-        <h2 className="font-bold text-xl text-gray-900 dark:text-white mb-2 mt-2 px-6">
-          {language.title}
-        </h2>
-        <ConnectedTaskList
-          key={language.id}
-          id={language.id}
-          name={language.name}
-          description={language.description}
-        />
+        <div>
+          <h2 className="font-bold text-xl text-gray-900 dark:text-white mb-2 mt-2 px-6">
+            {language.title}
+          </h2>
+          <ConnectedTaskList key={language.id} {...language} />
+        </div>
+        <div className="pt-3">
+          <h2 className="font-bold text-xl text-gray-900 dark:text-white mb-2 mt-2 px-6">
+            {language.subTitle}
+          </h2>
+          <ConnectedProjects isDarkMode={isDarkMode} language={language} />
+        </div>
       </div>
     )}
     {!isValidRequest && (
@@ -36,7 +40,6 @@ function mapStateToProps(state, ownProps) {
   let isValidRequest = true;
 
   if (language === undefined) {
-    // id contains the /asdf
     language = state.pageNotFound.find((notFound) => notFound.id === 404);
     isValidRequest = false;
   }

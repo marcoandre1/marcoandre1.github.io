@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import MobileMenuButton from "./MobileMenuButton";
 import DarkModeButton from "./DarkModeButton";
 import LogoMark from "./LogoMark";
+import TranslateDropDown from "./TranslateDropDown";
 
 const Navigation = ({
   languages,
@@ -11,6 +12,8 @@ const Navigation = ({
   onMobileMenuClick,
   isDarkMode,
   onDarkModeToggle,
+  isTranslateMenuOpen,
+  onTranslateToggle,
 }) => (
   <nav className="bg-gray-200 dark:bg-gray-800 rounded-md mb-6">
     <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -39,6 +42,11 @@ const Navigation = ({
           <DarkModeButton
             isDarkMode={isDarkMode}
             onDarkModeToggle={onDarkModeToggle}
+          />
+          <TranslateDropDown
+            isTranslateMenuOpen={isTranslateMenuOpen}
+            onTranslateToggle={onTranslateToggle}
+            languages={languages}
           />
         </div>
       </div>

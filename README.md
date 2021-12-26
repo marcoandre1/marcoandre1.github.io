@@ -2,7 +2,7 @@
 
 [modokemdev.com](https://modokemdev.com/) is my personal website. As of December 2020, this website is built with [Create React App](https://create-react-app.dev/docs/getting-started/) and [Tailwind CSS](https://tailwindcss.com/). This **README** explains some of the steps required to have a working website on [GitHub Pages](https://docs.github.com/en/pages). If you have any question, please open an issue or start a discussion. Thank you!
 
-> **NOTE:** to any one starting a new project, please consider [Next.js](https://nextjs.org/). The main reason I use **Create React App _(CRA)_** is because this is an old repo and CRA was, _at the time_, a good solution. But **Next.js** is a newer, easier and _far better_ solution to implement a React website. Take a look at my [speakers-app](https://github.com/marcoandre1/speakers-app) and my [nextjs-blog](https://github.com/marcoandre1/nextjs-blog) repositories, here on GitHub. That said, **CRA** apps are still very good and probably better for beginners mainly because there is less _magic_ happening than in a **Next.js** app. It really depends on your use case.  
+> **NOTE:** to any one starting a new project, please consider [Next.js](https://nextjs.org/). The main reason I use **Create React App _(CRA)_** is because this is an old repo and CRA was, _at the time_, a good solution. But **Next.js** is a newer, easier and _far better_ solution to implement a React website. Take a look at my **Next.js** repositories [speakers-app](https://github.com/marcoandre1/speakers-app) and [nextjs-blog](https://github.com/marcoandre1/nextjs-blog), here on GitHub. That said, **CRA** apps are still very good and probably better for beginners mainly because there is less _magic_ happening than in a **Next.js** app. It really depends on your use case.  
 
 **December 2021 UPDATE:** Updated Create React App from v4.0.1 to [v5.0.0](https://github.com/facebook/create-react-app/releases/tag/v5.0.0):  
 
@@ -12,7 +12,7 @@ npm install --save --save-exact react-scripts@5.0.0
 
 Everything went smooth but my svg files wouldn't load. I solved it by running an online optimizer on my svg files (<https://www.svgviewer.dev/>).  
 
-> **NOTE:** while trying to fix npm warnings I found this issue: [Help, `npm audit` says I have a vulnerability in react-scripts!](https://github.com/facebook/create-react-app/issues/11174). As of December 2021, I have some warnings (_low_ and _moderate_) on `npm install` and it seems to be a problem with the new CRA release using old libraries. There is no fix yet.  
+> **NOTE:** while trying to fix npm warnings I found this issue: [Help, `npm audit` says I have a vulnerability in react-scripts!](https://github.com/facebook/create-react-app/issues/11174). As of December 2021, I have some warnings (_3 low_ and _18 moderate_) on `npm install` and it seems to be a problem with the new CRA release using old libraries _(and probably because [react-snap](https://www.npmjs.com/package/react-snap) isn't mantained since December 13, 2018)_. There is no fix yet.  
 
 ## Table  of contents
 
@@ -49,7 +49,7 @@ Everything went smooth but my svg files wouldn't load. I solved it by running an
 git clone <url>
 ```
 
-- Install the dependencies to the local `node_modules` folder (_it will be created_). You will need **NodeJS** to run `npm`. If you are on windows here is a _good tutorial_, just make sure to run everything on admin mode to avoid errors: [Install NodeJS on Windows](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
+- Install the dependencies to the local `node_modules` folder (_the directory will be automatically created_). You will need **NodeJS** to run `npm`. If you are on windows here is a _good tutorial_, just make sure to run everything on admin mode to avoid errors: [Install NodeJS on Windows](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
 
 ```console
 npm install
@@ -63,11 +63,11 @@ npm install
 npm start
 ```
 
-> **NOTE:** if it's your first time running npm, you might get a prompt from firewall asking to allow local node server.  
+> **NOTE:** if it's your first time running npm, you might get a prompt from firewall asking to allow local node server. Obviously you need to allow it!  
 
 ## Deployment to GitHub Pages
 
-> **Before deploying** to GitHub pages, ensure your branch is up to date and run `npm start` to make sure everything works as expected!  
+> **Before deploying** to GitHub pages, ensure your branch is up to date and run `npm start` to make sure **everything** works as expected!  
 
 Follow the official documentation for [deploying to GitHub Pages](https://create-react-app.dev/docs/deployment#github-pages) from **Create React App**:
 

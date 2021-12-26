@@ -1,20 +1,69 @@
-# Modokemdev
+# ModokemDev
 
-<https://modokemdev.com/> is my personal website. As of December 2020, this website is built with [Create React App](https://create-react-app.dev/docs/getting-started/) and [Tailwind CSS](https://tailwindcss.com/). This README explains some of the steps I used to get a working website on GitHub Pages. If you have any question please open an issue. Thanks!
+[modokemdev.com](https://modokemdev.com/) is my personal website. As of December 2020, this website is built with [Create React App](https://create-react-app.dev/docs/getting-started/) and [Tailwind CSS](https://tailwindcss.com/). This **README** explains some of the steps required to have a working website on [GitHub Pages](https://docs.github.com/en/pages). If you have any question, please open an issue or start a discussion. Thank you!
 
-> **NOTE:** to any one starting a new project, please consider [Next.js](https://nextjs.org/). The main reason I use **Create React App _(CRA)_** is because this is an old repo and CRA was, at the time, a good solution. But Next.js is a newer and _far better_ solution to implement a React website. Take a look at my [speakers-app](https://github.com/marcoandre1/speakers-app) and my [nextjs-blog](https://github.com/marcoandre1/nextjs-blog) repositories, here on GitHub. That said, CRA apps are still very good and probably better for beginners. It really depends on your use case.  
+> **NOTE:** to any one starting a new project, please consider [Next.js](https://nextjs.org/). The main reason I use **Create React App _(CRA)_** is because this is an old repo and CRA was, _at the time_, a good solution. But **Next.js** is a newer, easier and _far better_ solution to implement a React website. Take a look at my [speakers-app](https://github.com/marcoandre1/speakers-app) and my [nextjs-blog](https://github.com/marcoandre1/nextjs-blog) repositories, here on GitHub. That said, **CRA** apps are still very good and probably better for beginners mainly because there is less _magic_ happening than in a **Next.js** app. It really depends on your use case.  
 
-## Index
+**December 2021 UPDATE:** Updated Create React App from v4.0.1 to [v5.0.0](https://github.com/facebook/create-react-app/releases/tag/v5.0.0):  
 
-[Deployment to GitHub pages](https://github.com/marcoandre1/marcoandre1.github.io#deployment-to-github-pages)  
-[Adding Tailwind CSS to Create React App](https://github.com/marcoandre1/marcoandre1.github.io#adding-tailwind-css-to-create-react-app)  
-[Formatting Code Automatically](https://github.com/marcoandre1/marcoandre1.github.io#formatting-code-automatically)  
-[Adding Dark Mode with Tailwind CSS](https://github.com/marcoandre1/marcoandre1.github.io#adding-dark-mode-with-tailwind-css)  
-[Pre-Rendering into Static HTML Files](https://github.com/marcoandre1/marcoandre1.github.io#pre-rendering-into-static-html-files)  
-[React auto generated README](https://github.com/marcoandre1/marcoandre1.github.io#react-auto-generated-readme)  
-[Available Scripts](https://github.com/marcoandre1/marcoandre1.github.io#available-scripts)  
-[Learn More](https://github.com/marcoandre1/marcoandre1.github.io#learn-more)  
-[Acknowledgments](https://github.com/marcoandre1/marcoandre1.github.io#acknowledgments)  
+```console
+npm install --save --save-exact react-scripts@5.0.0
+```  
+
+Everything went smooth but my svg files wouldn't load. I solved it by running an online optimizer on my svg files (<https://www.svgviewer.dev/>).  
+
+> **NOTE:** while trying to fix npm warnings I found this issue: [Help, `npm audit` says I have a vulnerability in react-scripts!](https://github.com/facebook/create-react-app/issues/11174). As of December 2021, I have some warnings (_low_ and _moderate_) on `npm install` and it seems to be a problem with the new CRA release using old libraries. There is no fix yet.  
+
+## Table  of contents
+
+> FYI: [How do I create some kind of table of content in GitHub wiki?](https://stackoverflow.com/questions/18244417/how-do-i-create-some-kind-of-table-of-content-in-github-wiki/61144170#61144170)
+
+- [Project setup](#project-setup)
+- [Deployment to GitHub Pages](#deployment-to-github-pages)
+  - [Additional notes for deploying to GitHub Pages](#additional-notes-for-deploying-to-github-pages)
+- [Adding Tailwind CSS to Create React App](#adding-tailwind-css-to-create-react-app)
+- [Formatting Code Automatically](#formatting-code-automatically)
+- [Adding Dark Mode with Tailwind CSS](#adding-dark-mode-with-tailwind-css)
+  - [Toggling Dark Mode (extra notes)](#toggling-dark-mode-extra-notes)
+- [Pre-Rendering into Static HTML Files](#pre-rendering-into-static-html-files)
+- [React auto generated README](#react-auto-generated-readme)
+- [Available Scripts](#available-scripts)
+  - [`npm start`](#npm-start)
+  - [`npm test`](#npm-test)
+  - [`npm run build`](#npm-run-build)
+  - [`npm run eject`](#npm-run-eject)
+- [Learn More](#learn-more)
+  - [Code Splitting](#code-splitting)
+  - [Analyzing the Bundle Size](#analyzing-the-bundle-size)
+  - [Making a Progressive Web App](#making-a-progressive-web-app)
+  - [Advanced Configuration](#advanced-configuration)
+  - [Deployment](#deployment)
+  - [`npm run build` fails to minify](#npm-run-build-fails-to-minify)
+- [Acknowledgments](#acknowledgments)
+
+## Project setup  
+
+- Clone the repository with [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
+```console
+git clone <url>
+```
+
+- Install the dependencies to the local `node_modules` folder (_it will be created_). You will need **NodeJS** to run `npm`. If you are on windows here is a _good tutorial_, just make sure to run everything on admin mode to avoid errors: [Install NodeJS on Windows](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
+
+```console
+npm install
+```
+
+> **NOTE:** as mentionned before, there might be some warnings. Don't try to fix them. Just follow to the next step.
+
+- Start the server!
+
+```console
+npm start
+```
+
+> **NOTE:** if it's your first time running npm, you might get a prompt from firewall asking to allow local node server.  
 
 ## Deployment to GitHub Pages
 
@@ -38,7 +87,7 @@ Also, if you don't want to add manually the `CNAME` file after deploying, you ca
 "scripts": {
   "predeploy": "npm run build",
   "deploy": "gh-pages -d build",
-  "build": "react-scripts build && echo modokemdev.com > ./build/CNAME",
+  "build": "react-scripts build && echo www.modokemdev.com > ./build/CNAME",
 }
 ```
 
@@ -46,14 +95,14 @@ Also, if you don't want to add manually the `CNAME` file after deploying, you ca
 
 > **NOTE:** As of December 2020, there is an official guide to [Install Tailwind CSS with Create React App](https://tailwindcss.com/docs/guides/create-react-app). You can either follow the official documentation or the steps below.  
 
-The main reason why adding Tailwind CSS to **Create React App** is a problem is that **Create React App** manages the WebPack config for us. There are plenty of ways to add Tailwind CSS. You can add the [CRACO](https://www.npmjs.com/package/@craco/craco) npm package (see [dev.to article](https://dev.to/ryandunn/how-to-use-tailwind-with-create-react-app-and-postcss-with-no-hassle-2i09) and this [Create React App issue](https://github.com/facebook/create-react-app/issues/2133)). Another way of adding Tailwind CSS without CRACO is explained in this article : [create-react-app with tailwind via postcss plus purgecss](https://medium.com/@xijo/create-react-app-with-tailwind-via-postcss-plus-purgecss-5c36b4c33ba7), which is close to what I did.
+The main reason why adding Tailwind CSS to **Create React App _(CRA)_** is a problem is that **CRA** manages the WebPack config for us. There are plenty of ways to add Tailwind CSS. You can add the [CRACO](https://www.npmjs.com/package/@craco/craco) npm package (see [dev.to article](https://dev.to/ryandunn/how-to-use-tailwind-with-create-react-app-and-postcss-with-no-hassle-2i09) and this [Create React App issue](https://github.com/facebook/create-react-app/issues/2133)). Another way of adding Tailwind CSS without CRACO is explained in this article : [create-react-app with tailwind via postcss plus purgecss](https://medium.com/@xijo/create-react-app-with-tailwind-via-postcss-plus-purgecss-5c36b4c33ba7), which is close to what I did.
 
 Personally, I followed this article : [Setup Tailwind with PostCSS in Create-React-App in 5 Minutes](https://medium.com/@grobeldev/setup-tailwind-with-postcss-in-create-react-app-in-5-minutes-43ae343e2789), and the [Tailwind official installation guide](https://tailwindcss.com/docs/installation).
 
 Here are the steps :  
 
-1. Following [Tailwind official installation guide](https://tailwindcss.com/docs/installation), **install Tailwind via npm**: `npm install tailwindcss`. You don't need to install `autoprefixer`, because it is [already installed](https://create-react-app.dev/docs/post-processing-css/).  
-2. **Add Tailwind as a PostCSS plugin**. Add `postcss.config.js` file at the root of your project and paste the following code:  
+- Following [Tailwind official installation guide](https://tailwindcss.com/docs/installation), **install Tailwind via npm**: `npm install tailwindcss`. You don't need to install `autoprefixer`, because it is [already installed](https://create-react-app.dev/docs/post-processing-css/).  
+- **Add Tailwind as a PostCSS plugin**. Add `postcss.config.js` file at the root of your project and paste the following code:  
 
 ```javascript
 module.exports = {
@@ -64,7 +113,7 @@ module.exports = {
 }
 ```
 
-3. **Create your configuration file** using `npx tailwindcss init` and paste the following code in the `tailwind.config.js` file (_you can also manually create the file, it is located at the root of the project_):  
+- **Create your configuration file** using `npx tailwindcss init` and paste the following code in the `tailwind.config.js` file (_you can also manually create the file, it is located at the root of the project_):  
 
 ```javascript
 module.exports = {
@@ -88,7 +137,7 @@ module.exports = {
 }
 ```
 
-4. **Include Tailwind in your CSS**. Add a `src/styles/index.css` file and and use the `@tailwind` directive to inject Tailwind's `base`, `components`, and `utilities` styles:  
+- **Include Tailwind in your CSS**. Add a `src/styles/index.css` file and and use the `@tailwind` directive to inject Tailwind's `base`, `components`, and `utilities` styles:  
 
 ```javascript
 @tailwind base;
@@ -96,7 +145,7 @@ module.exports = {
 @tailwind utilities;
 ```
 
-5. **Build your CSS**. This is where it gets tricky because we can't tell WebPack by default how to pick `PostCSS` configuration. A workaround, is to add the [postCSS CLI](https://github.com/postcss/postcss-cli) npm package: `npm install postcss-cli --save-dev` and to add the following scripts to your `package.json` file:  
+- **Build your CSS**. This is where it gets tricky because we can't tell WebPack by default how to pick `PostCSS` configuration. A workaround, is to add the [postCSS CLI](https://github.com/postcss/postcss-cli) npm package: `npm install postcss-cli --save-dev` and to add the following scripts to your `package.json` file:  
 
 ```json
 "scripts": {
@@ -166,13 +215,13 @@ To enable dark mode with `class` you need to add the `dark` class to the `html` 
 </html>
 ```
 
-Now, this is where it becomes tricky because you need to manipulate a DOM element, _the `html` tag_, with React. There is not a _good way_ of doing this. Which means that you can do it however you want because React does not offer a straightforward solution of doing this. Following the Tailwind CSS docs for dark mode, I implemented a solution which works quite well without adding any extra package. Please, take a look at `App.js` to see how this is done and the section below for further details.  
+Now, this is where it becomes tricky because you need to manipulate a DOM element, _the `html` tag_, with React. There is not a _good way_ of doing this. Which means that you can do it the way you want because React does not offer a straightforward solution for doing this. Following the Tailwind CSS docs for dark mode, I implemented a solution which works quite well without adding any extra package. Please, take a look at `App.js` to see how this is done and the section below for further details.  
 
 ### Toggling Dark Mode (extra notes)
 
-Toggling dark mode with React and Tailwind CSS can be a pain if you are not very familiar with either of one (my case). Keep in mind that Tailwind CSS docs don't offer a solution to implement this feature but rather guidelines. You really need to understand or try your best at understanding React and Tailwind CSS to get a _nice_ result.  
+Toggling dark mode with React and Tailwind CSS can be a pain if you are not very familiar with either of one (my case). Keep in mind that Tailwind CSS docs don't offer a solution to implement this feature but rather guidelines. You really need to understand or try your best at understanding **React** and **Tailwind CSS** to get a _nice_ result.  
 
-Here are some of the articles that help me to implement the final solution:  
+Here are some of the articles that helped me to implement the final solution:  
 
 - [How to Use Variables within Classes](https://www.pluralsight.com/guides/how-to-use-variables-within-classes): good starting point at understanding variables within classes, which is my case because `App.js` is defined as a class.  
 - [Tailwind UI docs React](https://tailwindui.com/documentation#js-react): great examples on how to implement Tailwind UI component into a React projects. The `DarkModeButton` component is based on the basic click handler demo.  
@@ -185,13 +234,13 @@ Here are some of the articles that help me to implement the final solution:
 
 CRA offers some guidelines on implementing [Pre-Rendering into Static HTML Files](https://create-react-app.dev/docs/pre-rendering-into-static-html-files) and a link to a [zero-configuration pre-rendering tutorial](https://medium.com/superhighfives/an-almost-static-stack-6df0a2791319).  
 
-First of all, remember that this website is meant to be deployed on **GitHub Pages**. As counter intuitive as it may sound, deploying a _complex_ website to GitHub Pages, _for instance having more than one route_, is not a straightforward task.  
+First of all, remember that this website is meant to be deployed on **GitHub Pages**. As counter intuitive as it may sound, deploying a **_complex_** website to GitHub Pages, _for instance a website with **more** than one route_, is not a straightforward task.  
 
 **_Why do we even care about generating static HTML files?_** Well, in case you don't know, static generation can improve your website loading time because you are rendering HTML files for every route. The problem is that React uses client-side JavaScript to populate data. This can be _slow_ if you have lots of data to load or worst, your JavaScript bundle can just fail, in which case your page is not going to load. You can read a bit more at [When to Use Static Generation v.s. Server-side Rendering](https://modokemdev.com/nextjs-blog/posts/ssg-ssr). Now, if it would have been just for this reason, I wouldn't have add static generation because I feel it's useless in our case. _However, ..._  
 
 **Static Generation is the only way to correctly add a _complex website (more than one route)_ to GitHub Pages.**  
 
-Adding static generation for CRA is _easy_. Simply add [`react-snap`]() and [`react-helmet`](https://github.com/nfl/react-helmet) to your project:  
+Adding static generation for CRA is _easy_. Simply add [`react-snap`](https://github.com/stereobooster/react-snap) and [`react-helmet`](https://github.com/nfl/react-helmet) to your project:  
 
 ```console
 npm install --save-dev react-snap
@@ -220,12 +269,12 @@ if (rootElement.hasChildNodes()) {
 }
 ```
 
-That's it! You can now throw a build and see the generated files. _Wait, if that's all, why did we install `react-helmet`?!_
+That's it! You can now throw a build and see the generated files. _Wait, if that's all, why did we install `react-helmet`?!_  
 
-You might get some errors while building your website with `react-snap`. Here are the 2 I encountered and how I managed them:  
+Well, the reason is that `react-snap` was **last published on December 13, 2018**. Here is the [repo on GitHub](https://github.com/stereobooster/react-snap) and the [npm package page](https://www.npmjs.com/package/react-snap). Dependencies being outdated, you might get some errors while building your website with `react-snap`. Here are 2 errors I encountered and how I managed them:  
 
-1. **General Error:** Ok, so the error wasn't clear but after some digging I found out that I wasn't managing `404` redirect, that is, an invalid request. `react-snap` will generate a `404.html` file. This file will be based on an invalid request to your website. For instance, let's say that you have a route for path `/1` and `/2` but not for `/3`, how is you CRA dev server managing it? Is it throwing an error? If that's the case, you need to manage it. _Easiest way of doing it is to catch the error, maybe an `undefined` variable, and work a solution from there._  
-2. **[404 page title does not contain "404" string](https://github.com/stereobooster/react-snap/issues/91#issue-285327619):** Simply add `<title>404 - Page not found</title>` to your `404.html` file. And this is why we _need_ **`react-helmet`**. Keep in mind that there are probably other ways of doing this but it seems a good approach globally. For this to work, simply update your react component to import `react-helmet` and define the `title` html tag:  
+1. **General Error:** Ok, so the error wasn't clear but after some digging I found out that I wasn't managing `404` redirect, that is, an invalid request. `react-snap` will generate a `404.html` file. This file will be based on an invalid request to your website. For instance, let's say that you have a route for path `/1` and `/2` but not for `/3`, **how is you CRA app managing 404 page not found?** Is it throwing an error? If that's the case, you need to manage it. _Easiest way of doing it, is to catch the error, maybe an `undefined` variable, and work a solution from there._ Take a look at the `<Switch>` tag in `./src/App.js` for my solution.  
+2. **[404 page title does not contain "404" string](https://github.com/stereobooster/react-snap/issues/91#issue-285327619):** Simply add `<title>404 - Page not found</title>` to your `404.html` file. And **this is why we _need_ `react-helmet`**. Keep in mind that there are probably other ways of doing this but it seems a good approach globally. For this to work, simply update your react component to import `react-helmet` and define the `title` html tag:  
 
 ```jsx
 import { Helmet } from "react-helmet";
@@ -243,7 +292,7 @@ class App extends Component {
 };
 ```
 
-> **Note:** take a look at my `Dashboard` component to see how I implemented it.  
+> **Note:** take a look at my [Dashboard component](./src/components/Dashboard.jsx) to see how I implemented it.  
 
 ## React auto generated README
 
@@ -294,27 +343,27 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+This section has moved here: <https://facebook.github.io/create-react-app/docs/code-splitting>
 
 ### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+This section has moved here: <https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size>
 
 ### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+This section has moved here: <https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app>
 
 ### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+This section has moved here: <https://facebook.github.io/create-react-app/docs/advanced-configuration>
 
 ### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+This section has moved here: <https://facebook.github.io/create-react-app/docs/deployment>
 
 ### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This section has moved here: <https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify>
 
 ## Acknowledgments
 
@@ -322,4 +371,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 - [Tailwind CSS](https://tailwindcss.com/)  
 - Icons from [Heroicons](https://heroicons.dev/)  
 - [react-snap](https://github.com/stereobooster/react-snap)  
-- And all the other amazing dependencies referenced in this README.
+- And all the other amazing dependencies referenced in this **README**.

@@ -1,27 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.8e5a4beb.chunk.css",
-    "main.js": "/static/js/main.3824488c.chunk.js",
-    "main.js.map": "/static/js/main.3824488c.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.839886ee.js",
-    "runtime-main.js.map": "/static/js/runtime-main.839886ee.js.map",
-    "static/js/2.79fb83fd.chunk.js": "/static/js/2.79fb83fd.chunk.js",
-    "static/js/2.79fb83fd.chunk.js.map": "/static/js/2.79fb83fd.chunk.js.map",
+    "main.css": "/static/css/main.62fcfcad.css",
+    "main.js": "/static/js/main.242df6ba.js",
+    "static/media/speakers-app.png": "/static/media/speakers-app.ba08f86b20248f6a7c4c.png",
+    "static/media/profile.png": "/static/media/profile.c8178ecc3cb8449f348b.png",
+    "static/media/nextjs-blog.png": "/static/media/nextjs-blog.87cfd80655266fcad974.png",
+    "static/media/meeting-API.png": "/static/media/meeting-API.08b7d8f34f6ef314c347.png",
+    "static/media/modokemdev-logo-mark.svg": "/static/media/modokemdev-logo-mark.a7d0d05620c9a067285aa6d89b741129.svg",
+    "static/media/modokemdev-logo-mark-black-font.svg": "/static/media/modokemdev-logo-mark-black-font.76be498c42967bebb2c316a8732a84d1.svg",
+    "static/media/modokemdev-logo.svg": "/static/media/modokemdev-logo.1656af172cba1cde9ff2e1b77e40fe8a.svg",
     "index.html": "/index.html",
-    "static/css/main.8e5a4beb.chunk.css.map": "/static/css/main.8e5a4beb.chunk.css.map",
-    "static/js/2.79fb83fd.chunk.js.LICENSE.txt": "/static/js/2.79fb83fd.chunk.js.LICENSE.txt",
-    "static/media/meeting-API.08b7d8f3.png": "/static/media/meeting-API.08b7d8f3.png",
-    "static/media/modokemdev-logo-mark-black-font.21d892af.svg": "/static/media/modokemdev-logo-mark-black-font.21d892af.svg",
-    "static/media/modokemdev-logo-mark.05117064.svg": "/static/media/modokemdev-logo-mark.05117064.svg",
-    "static/media/modokemdev-logo.52c732dc.svg": "/static/media/modokemdev-logo.52c732dc.svg",
-    "static/media/nextjs-blog.87cfd806.png": "/static/media/nextjs-blog.87cfd806.png",
-    "static/media/profile.c8178ecc.png": "/static/media/profile.c8178ecc.png",
-    "static/media/speakers-app.ba08f86b.png": "/static/media/speakers-app.ba08f86b.png"
+    "main.62fcfcad.css.map": "/static/css/main.62fcfcad.css.map",
+    "main.242df6ba.js.map": "/static/js/main.242df6ba.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.839886ee.js",
-    "static/js/2.79fb83fd.chunk.js",
-    "static/css/main.8e5a4beb.chunk.css",
-    "static/js/main.3824488c.chunk.js"
+    "static/css/main.62fcfcad.css",
+    "static/js/main.242df6ba.js"
   ]
 }

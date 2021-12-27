@@ -3,7 +3,7 @@ module.exports = {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
   },
-  purge: ['./src/**/*.{js,ts,jsx,tsx}', './public/index.html'],
+  content: ['./src/**/*.{js,ts,jsx,tsx}', './public/index.html'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -11,9 +11,6 @@ module.exports = {
         'accent-1': '#333',
       },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 }

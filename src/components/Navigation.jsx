@@ -14,6 +14,8 @@ const Navigation = ({
   onDarkModeToggle,
   isTranslateMenuOpen,
   onTranslateToggle,
+  languageId,
+  handleLanguageClick,
 }) => (
   <nav className="bg-gray-200 dark:bg-gray-800 rounded-md mb-6">
     <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -26,15 +28,22 @@ const Navigation = ({
           <LogoMark isDarkMode={isDarkMode} />
           <div className="hidden sm:block sm:ml-6">
             <div className="flex space-x-4">
-              {languages.map((language) => (
-                <Link
-                  to={`/${language.id}`}
-                  key={language.id}
-                  className="text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  {language.name}
-                </Link>
-              ))}
+            <a
+                className="text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                href={`#${
+                  languages.find((element) => element.id === languageId)
+                    .subTitle
+                }`}
+                key={
+                  languages.find((element) => element.id === languageId)
+                    .subTitle
+                }
+              >
+                {
+                  languages.find((element) => element.id === languageId)
+                    .subTitle
+                }
+              </a>
             </div>
           </div>
         </div>
@@ -47,6 +56,7 @@ const Navigation = ({
             isTranslateMenuOpen={isTranslateMenuOpen}
             onTranslateToggle={onTranslateToggle}
             languages={languages}
+            handleLanguageClick={handleLanguageClick}
           />
         </div>
       </div>

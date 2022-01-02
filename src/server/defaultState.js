@@ -108,6 +108,14 @@ export const defaultState = {
       subTitle: "Proyectos",
       description: "Desarollador C# de día, Dragon Rider de noche.",
     },
+    {
+      id: "na",
+      htmlTitle: "404 - Page not found",
+      name: "Page not found",
+      title: "404 - Page not found",
+      subTitle: "",
+      description: "You are lost!",
+    },
   ],
   bios: [
     {

@@ -6,6 +6,7 @@ const TranslateDropDown = ({
   isTranslateMenuOpen,
   onTranslateToggle,
   languages,
+  handleLanguageClick,
 }) => {
   return (
     <div className="ml-3 relative">
@@ -55,6 +56,7 @@ const TranslateDropDown = ({
               key={language.id}
               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               role="menuitem"
+              onClick={() => handleLanguageClick(language.id)}
             >
               {language.name}
             </Link>

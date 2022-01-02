@@ -44,18 +44,15 @@ export const defaultState = {
       bio: [
         {
           language: "en",
-          text:
-            "Speakers App is a Next.js application deployed to GitHub Pages.",
+          text: "Speakers App is a Next.js application deployed to GitHub Pages.",
         },
         {
           language: "fr",
-          text:
-            "Speakers App est une application Next.js déployé sur GitHub Pages.",
+          text: "Speakers App est une application Next.js déployé sur GitHub Pages.",
         },
         {
           language: "es",
-          text:
-            "Speakers App es una aplicación Next.js desplegada sobre GitHub Pages.",
+          text: "Speakers App es una aplicación Next.js desplegada sobre GitHub Pages.",
         },
       ],
     },
@@ -72,13 +69,11 @@ export const defaultState = {
         },
         {
           language: "fr",
-          text:
-            "Aplication Next.js de type blog déployé sur GitHub Pages à l'aide de gh-pages.",
+          text: "Aplication Next.js de type blog déployé sur GitHub Pages à l'aide de gh-pages.",
         },
         {
           language: "es",
-          text:
-            "Aplicación Next.js de tipo blog desplegada sobre GitHub Pages con la ayuda de gh-pages.",
+          text: "Aplicación Next.js de tipo blog desplegada sobre GitHub Pages con la ayuda de gh-pages.",
         },
       ],
     },
@@ -88,24 +83,33 @@ export const defaultState = {
       id: "en",
       htmlTitle: "ModokemDev | en",
       name: "English",
-      title: "Welcome to ModokemDev",
-      subTitle: "Projects",
+      pageTitle: "Welcome to ModokemDev",
+      aboutSubTitle: "About",
+      aboutAnchorLabel: "about",
+      projectSubTitle: "Projects",
+      projectAnchorLabel: "projects",
       description: "C# developer at day, Dragon Rider at night.",
     },
     {
       id: "fr",
       htmlTitle: "ModokemDev | fr",
       name: "Français",
-      title: "Bienvenue à ModokemDev",
-      subTitle: "Projets",
+      pageTitle: "Bienvenue à ModokemDev",
+      aboutSubTitle: "À propos",
+      aboutAnchorLabel: "a-propos",
+      projectSubTitle: "Projets",
+      projectAnchorLabel: "projets",
       description: "Développeur C# le jour, Dragon Rider la nuit.",
     },
     {
       id: "es",
       htmlTitle: "ModokemDev | es",
       name: "Español",
-      title: "Bienvenido a ModokemDev",
-      subTitle: "Proyectos",
+      pageTitle: "Bienvenido a ModokemDev",
+      aboutSubTitle: "Sobre mí",
+      aboutAnchorLabel: "sobre-mi",
+      projectSubTitle: "Proyectos",
+      projectAnchorLabel: "proyectos",
       description: "Desarollador C# de día, Dragon Rider de noche.",
     },
   ],

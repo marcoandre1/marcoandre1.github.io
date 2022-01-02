@@ -12,14 +12,20 @@ export const Dashboard = ({ id, language, isValidRequest, isDarkMode }) => (
     </Helmet>
     {isValidRequest && (
       <div>
+        <h1
+          id={`${language.pageTitle}`}
+          className="group flex font-bold text-xl text-gray-900 dark:text-white mb-2 mt-2 px-6"
+        >
+          {language.pageTitle}
+        </h1>
         <div>
           <h2
-            id="about"
+            id={`${language.aboutAnchorLabel}`}
             className="group flex font-bold text-xl text-gray-900 dark:text-white mb-2 mt-2 px-6"
           >
             <a
               className="absolute mt-2 -ml-6 flex items-center opacity-0 border-0 group-hover:opacity-100"
-              href="#about"
+              href={`#${language.aboutAnchorLabel}`}
               aria-label="Anchor"
             >
               <div className="w-5 text-gray-400 ring-1 ring-gray-900/5 rounded-md shadow-sm flex items-center justify-center hover:ring-gray-900/10 hover:shadow hover:text-gray-700 dark:bg-gray-700 dark:text-gray-300 dark:shadow-none dark:ring-0 dark:hover:text-white">
@@ -31,18 +37,18 @@ export const Dashboard = ({ id, language, isValidRequest, isDarkMode }) => (
                 </svg>
               </div>
             </a>
-            {language.title}
+            {language.aboutSubTitle}
           </h2>
           <ConnectedTaskList key={language.id} {...language} />
         </div>
         <div className="pt-3">
           <h2
-            id={`${language.subTitle}`}
+            id={`${language.projectAnchorLabel}`}
             className="group flex font-bold text-xl text-gray-900 dark:text-white mb-2 mt-2 px-6"
           >
             <a
               className="absolute mt-2 -ml-6 flex items-center opacity-0 border-0 group-hover:opacity-100"
-              href={`#${language.subTitle}`}
+              href={`#${language.projectAnchorLabel}`}
               aria-label="Anchor"
             >
               <div className="w-5 text-gray-400 ring-1 ring-gray-900/5 rounded-md shadow-sm flex items-center justify-center hover:ring-gray-900/10 hover:shadow hover:text-gray-700 dark:bg-gray-700 dark:text-gray-300 dark:shadow-none dark:ring-0 dark:hover:text-white">
@@ -54,7 +60,7 @@ export const Dashboard = ({ id, language, isValidRequest, isDarkMode }) => (
                 </svg>
               </div>
             </a>
-            {language.subTitle}
+            {language.projectSubTitle}
           </h2>
           <ConnectedProjects isDarkMode={isDarkMode} language={language} />
         </div>

@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
 import MobileMenuButton from "./MobileMenuButton";
 import DarkModeButton from "./DarkModeButton";
 import LogoMark from "./LogoMark";
@@ -28,22 +27,42 @@ const Navigation = ({
           <LogoMark isDarkMode={isDarkMode} />
           <div className="hidden sm:block sm:ml-6">
             <div className="flex space-x-4">
-            <a
-                className="text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                href={`#${
-                  languages.find((element) => element.id === languageId)
-                    .subTitle
-                }`}
-                key={
-                  languages.find((element) => element.id === languageId)
-                    .subTitle
-                }
-              >
-                {
-                  languages.find((element) => element.id === languageId)
-                    .subTitle
-                }
-              </a>
+              {languageId !== "notfound" && (
+                <div>
+                  <a
+                    className="text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    href={`#${
+                      languages.find((element) => element.id === languageId)
+                        .aboutAnchorLabel
+                    }`}
+                    key={
+                      languages.find((element) => element.id === languageId)
+                        .aboutAnchorLabel
+                    }
+                  >
+                    {
+                      languages.find((element) => element.id === languageId)
+                        .aboutSubTitle
+                    }
+                  </a>
+                  <a
+                    className="text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    href={`#${
+                      languages.find((element) => element.id === languageId)
+                        .projectAnchorLabel
+                    }`}
+                    key={
+                      languages.find((element) => element.id === languageId)
+                        .projectAnchorLabel
+                    }
+                  >
+                    {
+                      languages.find((element) => element.id === languageId)
+                        .projectSubTitle
+                    }
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -63,15 +82,42 @@ const Navigation = ({
     </div>
     <div className={`${isMenuOpen ? "block" : "hidden"} sm:hidden`}>
       <div className="px-2 pt-2 pb-3 space-y-1">
-        {languages.map((language) => (
-          <Link
-            to={`/${language.id}`}
-            key={language.id}
-            className="text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            {language.name}
-          </Link>
-        ))}
+        {languageId !== "notfound" && (
+          <div>
+            <a
+              className="text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              href={`#${
+                languages.find((element) => element.id === languageId)
+                  .aboutAnchorLabel
+              }`}
+              key={
+                languages.find((element) => element.id === languageId)
+                  .aboutAnchorLabel
+              }
+            >
+              {
+                languages.find((element) => element.id === languageId)
+                  .aboutSubTitle
+              }
+            </a>
+            <a
+              className="text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              href={`#${
+                languages.find((element) => element.id === languageId)
+                  .projectAnchorLabel
+              }`}
+              key={
+                languages.find((element) => element.id === languageId)
+                  .projectAnchorLabel
+              }
+            >
+              {
+                languages.find((element) => element.id === languageId)
+                  .projectSubTitle
+              }
+            </a>
+          </div>
+        )}
       </div>
     </div>
   </nav>

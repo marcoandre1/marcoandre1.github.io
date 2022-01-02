@@ -46,7 +46,7 @@ class App extends Component {
     let urlPathname = window.location.pathname;
     let languageId;
     if (urlPathname === undefined) {
-      languageId = "na";
+      languageId = "notfound";
     } else {
       if (
         urlPathname.indexOf("/en") === 0 ||
@@ -59,7 +59,7 @@ class App extends Component {
       } else if (urlPathname.indexOf("/es") === 0) {
         languageId = "es";
       } else {
-        languageId = "na";
+        languageId = "notfound";
       }
     }
     this.setLanguage(languageId);

@@ -14,8 +14,14 @@ const Navigation = ({
   onDarkModeToggle,
   isTranslateMenuOpen,
   onTranslateToggle,
+  languageId,
+  handleLanguageClick,
 }) => (
   <nav className="bg-gray-200 dark:bg-gray-800 rounded-md mb-6">
+    {/*Fake links for react-snap*/}
+    {languages.map((language) => (
+      <Link to={`/${language.id}`} key={language.id}></Link>
+    ))}
     <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div className="relative flex items-center justify-between h-16">
         <MobileMenuButton
@@ -26,15 +32,42 @@ const Navigation = ({
           <LogoMark isDarkMode={isDarkMode} />
           <div className="hidden sm:block sm:ml-6">
             <div className="flex space-x-4">
-              {languages.map((language) => (
-                <Link
-                  to={`/${language.id}`}
-                  key={language.id}
-                  className="text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  {language.name}
-                </Link>
-              ))}
+              {languageId !== "notfound" && (
+                <div>
+                  <a
+                    className="text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    href={`#${
+                      languages.find((element) => element.id === languageId)
+                        .aboutAnchorLabel
+                    }`}
+                    key={
+                      languages.find((element) => element.id === languageId)
+                        .aboutAnchorLabel
+                    }
+                  >
+                    {
+                      languages.find((element) => element.id === languageId)
+                        .aboutSubTitle
+                    }
+                  </a>
+                  <a
+                    className="text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                    href={`#${
+                      languages.find((element) => element.id === languageId)
+                        .projectAnchorLabel
+                    }`}
+                    key={
+                      languages.find((element) => element.id === languageId)
+                        .projectAnchorLabel
+                    }
+                  >
+                    {
+                      languages.find((element) => element.id === languageId)
+                        .projectSubTitle
+                    }
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -47,21 +80,49 @@ const Navigation = ({
             isTranslateMenuOpen={isTranslateMenuOpen}
             onTranslateToggle={onTranslateToggle}
             languages={languages}
+            handleLanguageClick={handleLanguageClick}
           />
         </div>
       </div>
     </div>
     <div className={`${isMenuOpen ? "block" : "hidden"} sm:hidden`}>
       <div className="px-2 pt-2 pb-3 space-y-1">
-        {languages.map((language) => (
-          <Link
-            to={`/${language.id}`}
-            key={language.id}
-            className="text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-          >
-            {language.name}
-          </Link>
-        ))}
+        {languageId !== "notfound" && (
+          <div>
+            <a
+              className="text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              href={`#${
+                languages.find((element) => element.id === languageId)
+                  .aboutAnchorLabel
+              }`}
+              key={
+                languages.find((element) => element.id === languageId)
+                  .aboutAnchorLabel
+              }
+            >
+              {
+                languages.find((element) => element.id === languageId)
+                  .aboutSubTitle
+              }
+            </a>
+            <a
+              className="text-black dark:text-gray-300 hover:text-gray-500 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              href={`#${
+                languages.find((element) => element.id === languageId)
+                  .projectAnchorLabel
+              }`}
+              key={
+                languages.find((element) => element.id === languageId)
+                  .projectAnchorLabel
+              }
+            >
+              {
+                languages.find((element) => element.id === languageId)
+                  .projectSubTitle
+              }
+            </a>
+          </div>
+        )}
       </div>
     </div>
   </nav>

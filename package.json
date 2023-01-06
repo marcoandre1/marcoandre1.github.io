@@ -68,7 +68,7 @@
   ],
   "devDependencies": {
     "postcss-cli": "^8.3.1",
-    "react-snap-test": "^1.23.4",
+    "react-snap-test": "^1.23.6",
     "tailwindcss": "^3.0.7"
   }
 }

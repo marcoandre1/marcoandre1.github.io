@@ -1,9 +1,23 @@
+# [PR]: 
 
-A reference to a related issue in your repository.
-A description of the changes proposed in the pull request.
-@marcoandre1
+## Description 
 
-### Description
-Please describe your pull request.
+_(Describe your PR)_
 
-💔Thank you!
+Proposed changes:
+
+  -
+  -
+  -
+
+## Related issue
+
+_(if applicable)_
+
+Fixes #
+
+## Notify
+
+Repository owner: @marcoandre1
+
+**Thank you! 🙌**

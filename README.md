@@ -4,16 +4,6 @@
 
 > **NOTE:** to any one starting a new project, please consider [Next.js](https://nextjs.org/). The main reason I use **Create React App _(CRA)_** is because this is an old repo and CRA was, _at the time_, a good solution. But **Next.js** is a newer, easier and _far better_ solution to implement a React website. Take a look at my **Next.js** repositories [speakers-app](https://github.com/marcoandre1/speakers-app) and [nextjs-blog](https://github.com/marcoandre1/nextjs-blog), here on GitHub. That said, **CRA** apps are still very good and probably better for beginners mainly because there is less _magic_ happening than in a **Next.js** app. It really depends on your use case.  
 
-**December 2021 UPDATE:** Updated Create React App from v4.0.1 to [v5.0.0](https://github.com/facebook/create-react-app/releases/tag/v5.0.0):  
-
-```console
-npm install --save --save-exact react-scripts@5.0.0
-```  
-
-Everything went smooth but my svg files wouldn't load. I solved it by running an online optimizer on my svg files (<https://www.svgviewer.dev/>).  
-
-> **NOTE:** while trying to fix npm warnings I found this issue: [Help, `npm audit` says I have a vulnerability in react-scripts!](https://github.com/facebook/create-react-app/issues/11174). As of December 2021, I have some warnings (_3 low_ and _18 moderate_) on `npm install` and it seems to be a problem with the new CRA release using old libraries _(and probably because [react-snap](https://www.npmjs.com/package/react-snap) isn't mantained since December 13, 2018)_. There is no fix yet.  
-
 ## Table  of contents
 
 > FYI: [How do I create some kind of table of content in GitHub wiki?](https://stackoverflow.com/questions/18244417/how-do-i-create-some-kind-of-table-of-content-in-github-wiki/61144170#61144170)

@@ -4,7 +4,7 @@
 
 Merge <branch> to <branch>
 
-## Proposed changes:
+Proposed changes:
 
   - N/A
 

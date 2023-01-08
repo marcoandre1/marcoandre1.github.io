@@ -2,7 +2,7 @@
 
 <!--
 
-merge template: ?quick_pull=1&assignees=marcoandre1&template=custom_pull_request_template.md
+merge template: ?quick_pull=1&assignees=marcoandre1&template=merge_pull_request_template.md
 
 --->
 

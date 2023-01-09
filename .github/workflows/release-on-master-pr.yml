@@ -1,0 +1,35 @@
+# Simple workflow for deploying react apps to GitHub Pages
+name: Build and deploy
+
+on:
+  # Runs on PR targeting the default branch
+  pull_request:
+    branches: ["master"]
+      
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+      
+jobs:
+  # Single deploy job since we're just deploying
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Install dependencies
+        run: npm install
+      - name: Deploy with gh-pages
+        run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npm run deploy -- -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

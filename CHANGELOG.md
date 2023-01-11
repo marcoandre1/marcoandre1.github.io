@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v2.0.2
+
+- #77 Add project link to images (@marcoandre1)
+
 ## v2.0.1
 
 - #78 Add new projects: actually some old projects that where never included on the website (@marcoandre1)

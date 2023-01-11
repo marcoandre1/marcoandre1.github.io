@@ -24,7 +24,9 @@ export default function Project({
         </div>
       </div>
       <div className="mb-6">
-        <ProjectImage id={image} />
+        <a href={url}>
+          <ProjectImage id={image} />
+        </a>
       </div>
       <div className="text-gray-600 dark:text-white">{description.text}</div>
     </div>

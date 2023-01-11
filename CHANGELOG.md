@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v2.0.1
+
+- #78 Add new projects: actually some old projects that where never included on the website (@marcoandre1)
+- #131 Add GitHub Actions for automatic deployment: take a look at `.github/workflows/release-on-master-pr.yml` file for more info. (@marcoandre1)
+- #108 Problem with deployments: see PR #132 Update gh-pages dependency from 2.2.0 to 4.0.0 and #134 Add GitHub action for automatics deployment. After some fixes on the workflow file, everything seems to run smoothly.
+
 ## v2.0.0
 
 - #109 Add a deployment log instead of putting info in the README (@marcoandre1)

@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v2.0.3
+
+- #148 Bumb puppeteer in react-snap dependency (@marcoandre1)
+- #146 Add badge status to README (@marcoandre1)
+
 ## v2.0.2
 
 - #77 Add project link to images (@marcoandre1)

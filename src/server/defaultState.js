@@ -1,6 +1,10 @@
 import meetingAPI from "../images/meeting-API.png";
 import speakersApp from "../images/speakers-app.png";
 import nextjsBlog from "../images/nextjs-blog.png";
+import dailyOrganizerDashboard from "../images/daily-organizer-dashboard.png";
+import snake from "../images/snake.png";
+import dragonQuestRush from "../images/dragon-quest-rush.png";
+import blog from "../images/blog.png";
 
 export const defaultState = {
   users: [
@@ -74,6 +78,90 @@ export const defaultState = {
         {
           language: "es",
           text: "Aplicación Next.js de tipo blog desplegada sobre GitHub Pages con la ayuda de gh-pages.",
+        },
+      ],
+    },
+    {
+      id: 4,
+      name: "daily-organizer",
+      image: dailyOrganizerDashboard,
+      url: "https://modokemdev.com/daily-organizer/",
+      repo: "https://github.com/marcoandre1/daily-organizer",
+      bio: [
+        {
+          language: "en",
+          text: "Daily organizer app deployed to GitHub Pages using gh-pages.",
+        },
+        {
+          language: "fr",
+          text: "Aplication de type TODO déployé sur GitHub Pages à l'aide de gh-pages.",
+        },
+        {
+          language: "es",
+          text: "Aplicación de tipo TODO desplegada sobre GitHub Pages con la ayuda de gh-pages.",
+        },
+      ],
+    },
+    {
+      id: 5,
+      name: "snake",
+      image: snake,
+      url: "https://modokemdev.com/snake/",
+      repo: "https://github.com/marcoandre1/snake",
+      bio: [
+        {
+          language: "en",
+          text: "JavaScript snake game.",
+        },
+        {
+          language: "fr",
+          text: "Jeux de snake en JavaScript.",
+        },
+        {
+          language: "es",
+          text: "Juego de snake en JavaScript.",
+        },
+      ],
+    },
+    {
+      id: 6,
+      name: "dragon-quest-rush",
+      image: dragonQuestRush,
+      url: "https://meltinglight.itch.io/dragon-quest-rush",
+      repo: "https://github.com/marcoandre1/mygame",
+      bio: [
+        {
+          language: "en",
+          text: "Game developed for the TeenyTiny DragonRuby MiniGameJam 2020 using the DragonRuby Game Toolkit.",
+        },
+        {
+          language: "fr",
+          text: "Jeux développé pour le TeenyTiny DragonRuby MiniGameJam 2020 avec le DragonRuby Game Toolkit.",
+        },
+        {
+          language: "es",
+          text: "Juego desarollado para el TeenyTiny DragonRuby MiniGameJam 2020 con DragonRuby Game Toolkit.",
+        },
+      ],
+    },
+    {
+      id: 7,
+      name: "blog",
+      image: blog,
+      url: "https://modokemdev.com/blog/",
+      repo: "https://github.com/marcoandre1/blog",
+      bio: [
+        {
+          language: "en",
+          text: "Personal blog using minimal-mistakes theme for jekyll .",
+        },
+        {
+          language: "fr",
+          text: "Blog personnel de type jekyll avec le thème minimal-mistakes.",
+        },
+        {
+          language: "es",
+          text: "Blog personal de tipo jekyll usando el tema minimal-mistakes.",
         },
       ],
     },

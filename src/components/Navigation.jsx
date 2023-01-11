@@ -99,6 +99,7 @@ const Navigation = ({
                 languages.find((element) => element.id === languageId)
                   .aboutAnchorLabel
               }
+              onClick={onMobileMenuClick}
             >
               {
                 languages.find((element) => element.id === languageId)
@@ -115,6 +116,7 @@ const Navigation = ({
                 languages.find((element) => element.id === languageId)
                   .projectAnchorLabel
               }
+              onClick={onMobileMenuClick}
             >
               {
                 languages.find((element) => element.id === languageId)

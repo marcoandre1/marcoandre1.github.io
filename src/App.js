@@ -98,6 +98,7 @@ class App extends Component {
 
   handleLanguageClick(languageId) {
     this.setLanguage(languageId);
+    this.onTranslateToggle();
   }
 
   setDarkMode() {

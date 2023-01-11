@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v2.0.4
+
+- Fix #147 language switch button closes correctly when language is choose.
+- Fix burger menu for mobile: closes when link is selected.
+
 ## v2.0.3
 
 - #148 Bumb puppeteer in react-snap dependency (@marcoandre1)

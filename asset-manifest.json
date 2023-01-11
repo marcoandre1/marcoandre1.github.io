@@ -1,20 +1,24 @@
 {
   "files": {
     "main.css": "/static/css/main.b858774f.css",
-    "main.js": "/static/js/main.dc1b3f82.js",
+    "main.js": "/static/js/main.effcc844.js",
     "static/media/speakers-app.png": "/static/media/speakers-app.ba08f86b20248f6a7c4c.png",
     "static/media/profile.png": "/static/media/profile.c8178ecc3cb8449f348b.png",
     "static/media/nextjs-blog.png": "/static/media/nextjs-blog.87cfd80655266fcad974.png",
+    "static/media/blog.png": "/static/media/blog.534b3239036cb2b3a7fd.png",
+    "static/media/dragon-quest-rush.png": "/static/media/dragon-quest-rush.b619ce167bc39380b8b6.png",
     "static/media/meeting-API.png": "/static/media/meeting-API.08b7d8f34f6ef314c347.png",
+    "static/media/daily-organizer-dashboard.png": "/static/media/daily-organizer-dashboard.dc87d9d2962a0d29a603.png",
+    "static/media/snake.png": "/static/media/snake.e369ba45351208892877.png",
     "static/media/modokemdev-logo-mark.svg": "/static/media/modokemdev-logo-mark.a7d0d05620c9a067285aa6d89b741129.svg",
     "static/media/modokemdev-logo-mark-black-font.svg": "/static/media/modokemdev-logo-mark-black-font.76be498c42967bebb2c316a8732a84d1.svg",
     "static/media/modokemdev-logo.svg": "/static/media/modokemdev-logo.1656af172cba1cde9ff2e1b77e40fe8a.svg",
     "index.html": "/index.html",
     "main.b858774f.css.map": "/static/css/main.b858774f.css.map",
-    "main.dc1b3f82.js.map": "/static/js/main.dc1b3f82.js.map"
+    "main.effcc844.js.map": "/static/js/main.effcc844.js.map"
   },
   "entrypoints": [
     "static/css/main.b858774f.css",
-    "static/js/main.dc1b3f82.js"
+    "static/js/main.effcc844.js"
   ]
 }

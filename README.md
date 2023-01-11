@@ -1,4 +1,4 @@
-# ModokemDev
+# ModokemDev [![Build and deploy](https://github.com/marcoandre1/marcoandre1.github.io/actions/workflows/release-on-master-pr.yml/badge.svg)](https://github.com/marcoandre1/marcoandre1.github.io/actions/workflows/release-on-master-pr.yml) [![pages-build-deployment](https://github.com/marcoandre1/marcoandre1.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/marcoandre1/marcoandre1.github.io/actions/workflows/pages/pages-build-deployment)
 
 [modokemdev.com](https://modokemdev.com/) is my personal website. As of December 2020, this website is built with [Create React App](https://create-react-app.dev/docs/getting-started/) and [Tailwind CSS](https://tailwindcss.com/). This **README** explains some of the steps required to have a working website on [GitHub Pages](https://docs.github.com/en/pages). If you have any question, please open an issue or start a discussion. Thank you!
 

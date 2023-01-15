@@ -59,6 +59,9 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "reactSnap": {
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
+  },
   "browserslist": [
     ">0.2%",
     "not dead",

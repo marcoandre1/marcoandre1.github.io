@@ -1,6 +1,6 @@
 {
   "name": "modokemdev-website",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Modokemdev website created using create-react-app",
   "main": "index.js",
   "private": true,
@@ -58,6 +58,9 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "reactSnap": {
+    "puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]
   },
   "browserslist": [
     ">0.2%",

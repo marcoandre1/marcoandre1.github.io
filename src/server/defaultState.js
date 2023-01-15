@@ -153,7 +153,7 @@ export const defaultState = {
       bio: [
         {
           language: "en",
-          text: "Personal blog using minimal-mistakes theme for jekyll .",
+          text: "Personal blog using minimal-mistakes theme for jekyll.",
         },
         {
           language: "fr",

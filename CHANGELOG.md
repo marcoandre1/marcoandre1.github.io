@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v2.0.5
+
+- Add `"puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]` in `package.json` as recommended in [README](https://github.com/stereobooster/react-snap#containers-and-other-restricted-environments):
+  
+  > Puppeteer (Headless Chrome) may fail due to sandboxing issues. To get around this, you may use:
+  > `"puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]`
+  > Read more about [puppeteer troubleshooting](https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md).
+
+- Set `ubuntu-latest` in Github Actions workflow. The proposed `puppeteer` fix should fix the issue: [There is a phenomenon in which the build does not end in the GitHub Actions (Linux Latest) environment.](https://github.com/stereobooster/react-snap/issues/571)
+
 ## v2.0.4
 
 - Fix #147 language switch button closes correctly when language is choose.

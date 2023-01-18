@@ -135,7 +135,7 @@ class App extends Component {
                 <Routes>
                   <Route path="/" element={<Navigate to="/en" replace />} />
                   <Route
-                    path={`/:id`}
+                    path=":id"
                     element={
                       <ConnectedDashboard isDarkMode={this.state.isDarkMode} />
                     }

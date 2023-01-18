@@ -1,34 +1,25 @@
 import React from "react";
-import { connect, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { ConnectedTaskList } from "./TaskList";
 import { ConnectedProjects } from "./Projects";
 import { Helmet } from "react-helmet";
 import PageNotFound from "./PageNotFound";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export const Dashboard = ({ isDarkMode }) => {
   let { id } = useParams();
-  let location = useLocation();
 
   if (id === undefined) {
     id = "en";
   }
 
-  let language = useSelector((state) =>
-    state.languages.find((language) => language.id === id)
+  let language = useSelector(
+    (state) =>
+      state.languages.find((language) => language.id === id) ??
+      state.pageNotFound.find((notFound) => notFound.id === 404)
   );
-  // let language = state.languages.find((language) => language.id === id);
-  let isValidRequest = true;
 
-  if (language === undefined) {
-    isValidRequest = false;
-  }
-
-  // language = useSelector((state) => {
-  //   if(language === undefined) {
-  //       return state.pageNotFound.find((notFound) => notFound.id === 404);
-  //   }
-  // })
+  let isValidRequest = language.id === 404 ? false : true;
 
   return (
     <div>
@@ -99,22 +90,3 @@ export const Dashboard = ({ isDarkMode }) => {
     </div>
   );
 };
-
-function mapStateToProps(state, ownProps) {
-  let id = ownProps.match === undefined ? "en" : ownProps.match.params.id;
-  let language = state.languages.find((language) => language.id === id);
-  let isValidRequest = true;
-
-  if (language === undefined) {
-    language = state.pageNotFound.find((notFound) => notFound.id === 404);
-    isValidRequest = false;
-  }
-
-  return {
-    id,
-    language,
-    isValidRequest,
-  };
-}
-
-export const ConnectedDashboard = connect(mapStateToProps)(Dashboard);

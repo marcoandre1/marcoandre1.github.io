@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store";
-import { ConnectedDashboard } from "./components/Dashboard";
+import { Dashboard } from "./components/Dashboard";
 import { ConnectedNavigation } from "./components/Navigation";
 import { ConnectedFooter } from "./components/Footer";
 import NoMatch from "./components/NoMatch";
@@ -136,11 +136,9 @@ class App extends Component {
                   <Route path="/" element={<Navigate to="/en" replace />} />
                   <Route
                     path=":id"
-                    element={
-                      <ConnectedDashboard isDarkMode={this.state.isDarkMode} />
-                    }
+                    element={<Dashboard isDarkMode={this.state.isDarkMode} />}
                   />
-                  <Route path="/:id/*" element={<NoMatch />} />
+                  <Route path=":id/*" element={<NoMatch />} />
                 </Routes>
               </main>
               <ConnectedFooter />

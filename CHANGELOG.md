@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## v2.0.6
+
+- [Upgrade to React 18](https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html)
+  
+  > To install the latest version of React:
+  > `npm install react react-dom`
+
+- [Upgrade to React Router v6](https://reactrouter.com/en/main/upgrading/v5#upgrade-to-react-router-v6)
+
 ## v2.0.5
 
 - Add `"puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]` in `package.json` as recommended in [README](https://github.com/stereobooster/react-snap#containers-and-other-restricted-environments):

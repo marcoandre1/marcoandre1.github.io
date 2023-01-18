@@ -1,5 +1,43 @@
 # CHANGELOG
 
+## v3.0.0
+
+- [Upgrade to React 18](https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html)
+  
+  > To install the latest version of React:
+  > `npm install react react-dom`
+  >
+  > **NOTE:** see commit details [Bump react react-dom](https://github.com/marcoandre1/marcoandre1.github.io/pull/159/commits/280782c7e3082f9a06c4595437ba8dc36452f70c)
+
+- [Upgrade to React Router v6](https://reactrouter.com/en/main/upgrading/v5#upgrade-to-react-router-v6)
+  
+  > Upgrade all `<Switch>` elements to `<Routes>`.
+  > `<Route exact>` is gone.
+  >  `<Route element>` replaces `<Route render>` props. (see [Upgrade to React Router v5.1](https://reactrouter.com/en/main/upgrading/v5#upgrade-to-react-router-v51))
+  > `useParams` inside your route component retrieves params. (see [Upgrade to React Router v5.1](https://reactrouter.com/en/main/upgrading/v5#upgrade-to-react-router-v51))
+  >
+  > **NOTE:** see commit details [Bump react-router-dom to v6](https://github.com/marcoandre1/marcoandre1.github.io/pull/159/commits/4f3492e6825f86e43632894873ab50c95082e88f)
+
+- Upgrade to react-redux 8
+  
+  > Add [useSelector()](https://react-redux.js.org/api/hooks#useselector) hook
+  > Allows you to extract data from the Redux store state, using a selector function.
+  > The selector is approximately equivalent to the mapStateToProps argument to connect conceptually.
+  >
+  > **NOTE:** I had to change to `useSelector()` in the `Dashboard` component instead of `mapStateToProps()` because of the upgrade to **React router v6**. See commit details [Add useSelector hook](https://github.com/marcoandre1/marcoandre1.github.io/pull/159/commits/dc358303620d89afb5ff16f37210c380a07299a9)
+
+- Bump `@headlessui/react` because previous version incompatible with **React 18**.
+
+## v2.0.5
+
+- Add `"puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]` in `package.json` as recommended in [README](https://github.com/stereobooster/react-snap#containers-and-other-restricted-environments):
+  
+  > Puppeteer (Headless Chrome) may fail due to sandboxing issues. To get around this, you may use:
+  > `"puppeteerArgs": ["--no-sandbox", "--disable-setuid-sandbox"]`
+  > Read more about [puppeteer troubleshooting](https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md).
+
+- Set `ubuntu-latest` in Github Actions workflow. The proposed `puppeteer` fix should fix the issue: [There is a phenomenon in which the build does not end in the GitHub Actions (Linux Latest) environment.](https://github.com/stereobooster/react-snap/issues/571)
+
 ## v2.0.4
 
 - Fix #147 language switch button closes correctly when language is choose.

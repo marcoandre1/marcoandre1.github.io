@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b858774f.css",
-    "main.js": "/static/js/main.16cfe50d.js",
+    "main.js": "/static/js/main.ac046055.js",
     "static/media/speakers-app.png": "/static/media/speakers-app.ba08f86b20248f6a7c4c.png",
     "static/media/profile.png": "/static/media/profile.c8178ecc3cb8449f348b.png",
     "static/media/nextjs-blog.png": "/static/media/nextjs-blog.87cfd80655266fcad974.png",
@@ -15,10 +15,10 @@
     "static/media/modokemdev-logo.svg": "/static/media/modokemdev-logo.1656af172cba1cde9ff2e1b77e40fe8a.svg",
     "index.html": "/index.html",
     "main.b858774f.css.map": "/static/css/main.b858774f.css.map",
-    "main.16cfe50d.js.map": "/static/js/main.16cfe50d.js.map"
+    "main.ac046055.js.map": "/static/js/main.ac046055.js.map"
   },
   "entrypoints": [
     "static/css/main.b858774f.css",
-    "static/js/main.16cfe50d.js"
+    "static/js/main.ac046055.js"
   ]
 }

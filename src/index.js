@@ -5,7 +5,7 @@ import App from "./App";
 
 const rootElement = document.getElementById("root");
 if (rootElement.hasChildNodes()) {
-  hydrateRoot(<App />, rootElement);
+  hydrateRoot(rootElement, <App />);
   // Unlike with createRoot, you don't need a separate root.render() call here.
 } else {
   const root = createRoot(rootElement);

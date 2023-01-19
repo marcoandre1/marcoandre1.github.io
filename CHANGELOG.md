@@ -9,6 +9,25 @@
   >
   > **NOTE:** see commit details [Bump react react-dom](https://github.com/marcoandre1/marcoandre1.github.io/pull/159/commits/280782c7e3082f9a06c4595437ba8dc36452f70c)
 
+- Fix #162 [BUG]: hydrateRoot(...): Target container is not a DOM element. **Particular attention to the parameters inversion in the NEW hydrate function:** `hydrate(<App tab="home" />, container)` vs `hydrateRoot(container, <App tab="home" />)`.
+
+  Extract from [How to Upgrade to React 18](https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html):
+
+  > Finally, if your app uses server-side rendering with hydration, upgrade `hydrate` to `hydrateRoot`:
+  >
+  > ```js
+  > // Before
+  > import { hydrate } from 'react-dom';
+  > const container = document.getElementById('app');
+  > hydrate(<App tab="home" />, container);
+  >
+  > // After
+  > import { hydrateRoot } from 'react-dom/client';
+  > const container = document.getElementById('app');
+  > const root = hydrateRoot(container, <App tab="home" />);
+  > // Unlike with createRoot, you don't need a separate root.render() call here.
+  > ```
+
 - [Upgrade to React Router v6](https://reactrouter.com/en/main/upgrading/v5#upgrade-to-react-router-v6)
   
   > Upgrade all `<Switch>` elements to `<Routes>`.

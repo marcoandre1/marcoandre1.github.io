@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { ConnectedTaskList } from "./TaskList";
+import { ConnectedBioContainer } from "./BioContainer";
 import { ConnectedProjects } from "./Projects";
 import { Helmet } from "react-helmet";
 import PageNotFound from "./PageNotFound";
@@ -55,7 +55,7 @@ export const Dashboard = ({ isDarkMode }) => {
               </a>
               {language.aboutSubTitle}
             </h2>
-            <ConnectedTaskList key={language.id} {...language} />
+            <ConnectedBioContainer key={language.id} {...language} />
           </div>
           <div className="pt-3">
             <h2

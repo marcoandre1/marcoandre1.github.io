@@ -1,7 +1,7 @@
 import React from "react";
 import { SimpleImg } from "react-simple-img";
 
-export default function ProfileImage({ id }) {
+export default function BioImage({ id }) {
   return (
     <SimpleImg
       src={id}

@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import MobileMenuButton from "./MobileMenuButton";
 import DarkModeButton from "./DarkModeButton";
-import LogoMark from "./LogoMark";
+import LogoName from "./LogoName";
 import TranslateDropDown from "./TranslateDropDown";
 
 const Navigation = ({
@@ -29,7 +29,7 @@ const Navigation = ({
           onMobileMenuClick={onMobileMenuClick}
         />
         <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-          <LogoMark isDarkMode={isDarkMode} />
+          <LogoName isDarkMode={isDarkMode} />
           <div className="hidden sm:block sm:ml-6">
             <div className="flex space-x-4">
               {languageId !== "notfound" && (

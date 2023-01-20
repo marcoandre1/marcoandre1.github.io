@@ -30,9 +30,11 @@ export const Dashboard = ({ isDarkMode }) => {
         <div>
           <h1
             id={`${language.pageTitle}`}
-            className="group flex font-bold text-xl text-gray-900 dark:text-white mb-2 mt-2 px-6"
+            className="group flex font-extrabold text-5xl text-gray-900 dark:text-white mb-2 mt-2 px-6 ..."
           >
-            {language.pageTitle}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+              {language.pageTitle}
+            </span>
           </h1>
           <div>
             <h2

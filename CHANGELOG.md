@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## [v3.0.1](https://github.com/marcoandre1/marcoandre1.github.io/tree/v3.0.1) Jan 20, 2023
+
+- [Refactor components name](https://github.com/marcoandre1/marcoandre1.github.io/pull/166/commits/716d42aebefabf3c4fdf2c1e7e692433fa493355). (@marcoandre1)
+- [Update Tailwind CSS to latest](https://github.com/marcoandre1/marcoandre1.github.io/pull/166/commits/ed223de426ef143e7764e0c166be5b1250550405). (@marcoandre1)
+- [Add some Tailwind style](https://github.com/marcoandre1/marcoandre1.github.io/pull/166/commits/256db72f1a8502dc5da26717ee2dd64cf671e704). (@marcoandre1)
+
 ## v3.0.0
 
 - [Upgrade to React 18](https://reactjs.org/blog/2022/03/08/react-18-upgrade-guide.html)

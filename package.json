@@ -58,7 +58,8 @@
   },
   "overrides": {
     "react-scripts": {
-      "@svgr/webpack": "8.1.0"
+      "@svgr/webpack": "8.1.0",
+      "resolve-url-loader": "5.0.0"
     }
   },
   "eslintConfig": {

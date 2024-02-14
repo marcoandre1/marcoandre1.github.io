@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## [v3.0.2](https://github.com/marcoandre1/marcoandre1.github.io/tree/v3.0.2) Feb 13, 2024
+
+- [Update Footer.jsx](https://github.com/marcoandre1/marcoandre1.github.io/pull/171/commits/8a7be6e9c9ad4ab895fd12bc4961e17d8918b2c2). (@marcoandre1)
+- [Bump postcss-cli and override @svgr/webpack from react-scripts](https://github.com/marcoandre1/marcoandre1.github.io/pull/171/commits/d6d9224c4aac34e76ecf716304c8ddd2993ec8be). (@marcoandre1)
+
+  > Implemented the [answer](https://github.com/facebook/create-react-app/issues/13337#issuecomment-1693581134) for the issue [Vulnerabilities... #13337](https://github.com/facebook/create-react-app/issues/13337) from [create-react-app](https://github.com/facebook/create-react-app) on GitHub.
+  > Like stated on the [npm Docs](https://docs.npmjs.com/cli/v8/configuring-npm/package-json#overrides) :
+  > Overrides provide a way to replace a package in your dependency tree with another version, or another package entirely. These changes can be scoped as specific or as vague as desired.
+
+- [Run npm audit --fix](https://github.com/marcoandre1/marcoandre1.github.io/pull/171/commits/f37a6cf27b4062bfe30bb73203e9f89c7a79631b). (@marcoandre1)
+- [Adds overrides for resolve-url-loader](https://github.com/marcoandre1/marcoandre1.github.io/pull/171/commits/dc1186ee9ba990d8931955b3b92f5bfbb2795ffa). (@marcoandre1)
+- [Bump gh-pages and yaml release pipeline](https://github.com/marcoandre1/marcoandre1.github.io/pull/171/commits/583a5d13c90e11684e4ba22e0cf0b6bbf94d039c). (@marcoandre1)
+- [Bump tailwindcss](https://github.com/marcoandre1/marcoandre1.github.io/pull/171/commits/7a7f7996c667a0e2872329da8c0648633d01640d). (@marcoandre1)
+
 ## [v3.0.1](https://github.com/marcoandre1/marcoandre1.github.io/tree/v3.0.1) Jan 20, 2023
 
 - [Refactor components name](https://github.com/marcoandre1/marcoandre1.github.io/pull/166/commits/716d42aebefabf3c4fdf2c1e7e692433fa493355). (@marcoandre1)

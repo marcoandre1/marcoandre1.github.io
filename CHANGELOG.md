@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## [v3.0.3](https://github.com/marcoandre1/marcoandre1.github.io/tree/v3.0.3) Feb 18, 2024
+
+- [Remove node_modules/ip package](https://github.com/marcoandre1/marcoandre1.github.io/commit/d0638b36befe4ca951d6e09dc09e91d1bf92b247). (@marcoandre1)
+  
+  > [NPM IP package vulnerable to Server-Side Request Forgery (SSRF) attacks](https://github.com/advisories/GHSA-78xj-cgh5-2h22) :
+  > An issue in all published versions of the NPM package `ip` allows an attacker to execute arbitrary code and obtain sensitive information via the `isPublic()` function. This can lead to potential Server-Side Request Forgery (SSRF) attacks. The core issue is the function's failure to accurately distinguish between public and private IP addresses.
+
 ## [v3.0.2](https://github.com/marcoandre1/marcoandre1.github.io/tree/v3.0.2) Feb 13, 2024
 
 - [Update Footer.jsx](https://github.com/marcoandre1/marcoandre1.github.io/pull/171/commits/8a7be6e9c9ad4ab895fd12bc4961e17d8918b2c2). (@marcoandre1)
